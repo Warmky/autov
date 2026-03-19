@@ -124,14 +124,20 @@ type AutodiscoverResult struct {
 	AutodiscoverCNAME []string                 `json:"autodiscovercname,omitempty"`
 	Method            string                   `json:"method"` // 查询方法，如 POST, GET, SRV
 	Index             int                      `json:"index"`
-	URI               string                   `json:"uri"`       // 查询的 URI
-	Redirects         []map[string]interface{} `json:"redirects"` // 重定向链
-	Config            string                   `json:"config"`    // 配置信息
-	CertInfo          *CertInfo                `json:"cert_info"`
-	Error             string                   `json:"error"` // 错误信息（如果有）
+	URI               string                   `json:"uri"`                // 查询的 URI
+	Redirects         []map[string]interface{} `json:"redirects"`          // 重定向链
+	Config            string                   `json:"config,omitempty"`   // 成功解析的配置信息
+	RawBody           string                   `json:"raw_body,omitempty"` // 原始返回的Body(包含异常XML或错误信息)
+	CertInfo          *CertInfo                `json:"cert_info,omitempty"`
+	Error             string                   `json:"error,omitempty"` // 错误信息（如果有）
+	StatusTag         string                   `json:"status_tag"`      // 状态标签，用于过滤
 	ServerHeaders     map[string]string        `json:"server_headers,omitempty"`
+	Flag1             int                      `json:"flag1"` // 记录HTTP重定向次数
+	Flag2             int                      `json:"flag2"` // 记录RedirectAddr次数
+	Flag3             int                      `json:"flag3"` // 记录RedirectUrl次数
 }
 
+// AutoconfigResult 保存每次Autoconfig查询的结果
 // AutoconfigResult 保存每次Autoconfig查询的结果
 type AutoconfigResult struct {
 	Domain        string                   `json:"domain"`
@@ -139,9 +145,11 @@ type AutoconfigResult struct {
 	Index         int                      `json:"index"`
 	URI           string                   `json:"uri"`
 	Redirects     []map[string]interface{} `json:"redirects"`
-	Config        string                   `json:"config"`
-	CertInfo      *CertInfo                `json:"cert_info"`
-	Error         string                   `json:"error"`
+	Config        string                   `json:"config,omitempty"`   // 成功解析的配置
+	RawBody       string                   `json:"raw_body,omitempty"` // 存放畸形XML或报错内容
+	CertInfo      *CertInfo                `json:"cert_info,omitempty"`
+	Error         string                   `json:"error,omitempty"`
+	StatusTag     string                   `json:"status_tag"` // 状态标签：SUCCESS, MALFORMED_XML 等
 	ServerHeaders map[string]string        `json:"server_headers,omitempty"`
 }
 

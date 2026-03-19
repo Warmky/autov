@@ -15,7 +15,8 @@ import (
 // 查询Autoconfig部分
 func QueryAutoconfig(domain string, email string) []models.AutoconfigResult {
 	var results []models.AutoconfigResult
-	//method1 直接通过url发送get请求得到config
+
+	// method1: 直接通过url发送get请求得到config
 	urls := []string{
 		fmt.Sprintf("https://autoconfig.%s/mail/config-v1.1.xml?emailaddress=%s", domain, email),             //uri1
 		fmt.Sprintf("https://%s/.well-known/autoconfig/mail/config-v1.1.xml?emailaddress=%s", domain, email), //uri2
@@ -24,60 +25,36 @@ func QueryAutoconfig(domain string, email string) []models.AutoconfigResult {
 	}
 	for i, url := range urls {
 		index := i + 1
-		config, redirects, certinfo, serverHeaders, err := Get_autoconfig_config(domain, url, "directurl", index)
-
-		result := models.AutoconfigResult{
-			Domain:        domain,
-			Method:        "directurl",
-			Index:         index,
-			URI:           url,
-			Redirects:     redirects,
-			Config:        config,
-			CertInfo:      certinfo,
-			ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-		}
-		if err != nil {
-			result.Error = err.Error()
-		}
-		results = append(results, result)
+		// 直接接收返回的结构体指针
+		res := Get_autoconfig_config(domain, url, "directurl", index)
+		results = append(results, *res)
 	}
 
-	//method2 ISPDB
+	// method2: ISPDB
 	ISPurl := fmt.Sprintf("https://autoconfig.thunderbird.net/v1.1/%s", domain)
-	config, redirects, certinfo, serverHeaders, err := Get_autoconfig_config(domain, ISPurl, "ISPDB", 0)
-	result_ISPDB := models.AutoconfigResult{
-		Domain:        domain,
-		Method:        "ISPDB",
-		Index:         0,
-		URI:           ISPurl,
-		Redirects:     redirects,
-		Config:        config,
-		CertInfo:      certinfo,
-		ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-	}
-	if err != nil {
-		result_ISPDB.Error = err.Error()
-	}
-	results = append(results, result_ISPDB)
+	res_ISPDB := Get_autoconfig_config(domain, ISPurl, "ISPDB", 0)
+	results = append(results, *res_ISPDB)
 
-	//method3 MX查询
+	// method3: MX查询
 	mxHost, err := utils.ResolveMXRecord(domain)
 	if err != nil {
 		result_MX := models.AutoconfigResult{
-			Domain: domain,
-			Method: "MX",
-			Index:  0,
-			Error:  fmt.Sprintf("Resolve MX Record error for %s: %v", domain, err),
+			Domain:    domain,
+			Method:    "MX",
+			Index:     0,
+			Error:     fmt.Sprintf("Resolve MX Record error for %s: %v", domain, err),
+			StatusTag: "MX_RESOLVE_FAILED", // 补充状态标签
 		}
 		results = append(results, result_MX)
 	} else {
 		mxFullDomain, mxMainDomain, err := utils.ExtractDomains(mxHost)
 		if err != nil {
 			result_MX := models.AutoconfigResult{
-				Domain: domain,
-				Method: "MX",
-				Index:  0,
-				Error:  fmt.Sprintf("extract domain from mxHost error for %s: %v", domain, err),
+				Domain:    domain,
+				Method:    "MX",
+				Index:     0,
+				Error:     fmt.Sprintf("extract domain from mxHost error for %s: %v", domain, err),
+				StatusTag: "MX_EXTRACT_FAILED", // 补充状态标签
 			}
 			results = append(results, result_MX)
 		} else {
@@ -87,21 +64,8 @@ func QueryAutoconfig(domain string, email string) []models.AutoconfigResult {
 					fmt.Sprintf("https://autoconfig.thunderbird.net/v1.1/%s", mxFullDomain),                        //3
 				}
 				for i, url := range urls {
-					config, redirects, certinfo, serverHeaders, err := Get_autoconfig_config(domain, url, "MX_samedomain", i*2+1)
-					result := models.AutoconfigResult{
-						Domain:        domain,
-						Method:        "MX_samedomain",
-						Index:         i*2 + 1,
-						URI:           url,
-						Redirects:     redirects,
-						Config:        config,
-						CertInfo:      certinfo,
-						ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-					}
-					if err != nil {
-						result.Error = err.Error()
-					}
-					results = append(results, result)
+					res := Get_autoconfig_config(domain, url, "MX_samedomain", i*2+1)
+					results = append(results, *res)
 				}
 			} else {
 				urls := []string{
@@ -111,123 +75,117 @@ func QueryAutoconfig(domain string, email string) []models.AutoconfigResult {
 					fmt.Sprintf("https://autoconfig.thunderbird.net/v1.1/%s", mxMainDomain),                        //4
 				}
 				for i, url := range urls {
-					config, redirects, certinfo, serverHeaders, err := Get_autoconfig_config(domain, url, "MX", i+1)
-					result := models.AutoconfigResult{
-						Domain:        domain,
-						Method:        "MX",
-						Index:         i + 1,
-						URI:           url,
-						Redirects:     redirects,
-						Config:        config,
-						CertInfo:      certinfo,
-						ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-					}
-					if err != nil {
-						result.Error = err.Error()
-					}
-					results = append(results, result)
+					res := Get_autoconfig_config(domain, url, "MX", i+1)
+					results = append(results, *res)
 				}
 			}
 		}
-
 	}
-	return results
 
+	return results
 }
 
-func Get_autoconfig_config(domain string, url string, method string, index int) (string, []map[string]interface{}, *models.CertInfo, map[string]string, error) {
+// 注意：返回值改成了只返回结构体指针
+func Get_autoconfig_config(domain string, url string, method string, index int) *models.AutoconfigResult {
+	result := &models.AutoconfigResult{
+		Domain:        domain,
+		Method:        method,
+		Index:         index,
+		URI:           url,
+		ServerHeaders: make(map[string]string),
+		Redirects:     []map[string]interface{}{},
+	}
+
 	client := &http.Client{
 		Transport: &http.Transport{
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: true,
-				MinVersion:         tls.VersionTLS10,
-			},
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true, MinVersion: tls.VersionTLS10},
 		},
 		Timeout: 15 * time.Second,
 	}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return "", []map[string]interface{}{}, nil, nil, err
+		result.Error = fmt.Sprintf("failed to create request: %v", err)
+		result.StatusTag = "REQ_CREATE_ERROR"
+		return result
 	}
 
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", []map[string]interface{}{}, nil, nil, err
+		result.Error = fmt.Sprintf("failed to send request: %v", err)
+		result.StatusTag = "REQ_SEND_ERROR"
+		return result
 	}
 
-	// === 新增代码：提取关键指纹 Headers ===
-	serverHeaders := make(map[string]string)
-	// 提取主要指纹
-	serverHeaders["Server"] = resp.Header.Get("Server")
-	serverHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
-	// Exchange 特有
-	serverHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
-	serverHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
-	// 其他可能的特征
-	serverHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
+	// 提取关键指纹 Headers
+	result.ServerHeaders["Server"] = resp.Header.Get("Server")
+	result.ServerHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
+	result.ServerHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
+	result.ServerHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
+	result.ServerHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
 
-	// 获取重定向历史记录
-	redirects := utils.GetRedirects(resp)
+	result.Redirects = utils.GetRedirects(resp)
 	defer resp.Body.Close()
 
-	body, err := io.ReadAll(resp.Body)
+	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return "", redirects, nil, serverHeaders, fmt.Errorf("failed to read response body: %v", err)
+		result.Error = fmt.Sprintf("failed to read response body: %v", err)
+		result.StatusTag = "READ_BODY_ERROR"
+		return result
 	}
-	var autoconfigResp models.AutoconfigResponse
-	err = xml.Unmarshal(body, &autoconfigResp)
-	if err != nil {
-		if (strings.HasPrefix(strings.TrimSpace(string(body)), `<?xml version="1.0"`) || strings.HasPrefix(strings.TrimSpace(string(body)), `<clientConfig`)) && !strings.Contains(strings.TrimSpace(string(body)), `<html`) && !strings.Contains(strings.TrimSpace(string(body)), `<item`) && !strings.Contains(strings.TrimSpace(string(body)), `lastmod`) && !strings.Contains(strings.TrimSpace(string(body)), `lt`) {
-			saveno_XMLToFile("no_autoconfig_config.xml", string(body), domain)
-		}
-		return "", redirects, nil, serverHeaders, fmt.Errorf("failed to unmarshal XML: %v", err)
+
+	bodyStr := string(bodyBytes)
+	bodyTrimmed := strings.TrimSpace(bodyStr)
+
+	// 无论成功还是失败，先把原始Body存下来，但做一层截断防护防止打爆内存
+	lowerConfig := strings.ToLower(bodyStr)
+	isXML := strings.Contains(lowerConfig, "<?xml") || strings.Contains(lowerConfig, "<clientconfig")
+	if !isXML && len(bodyStr) > 2000 {
+		result.RawBody = bodyStr[:1000] + "\n...[TRUNCATED NON-XML BODY]"
 	} else {
-		var certInfo models.CertInfo
-		// 提取证书信息
-		if resp.TLS != nil {
-			//var encodedData []byte
-			//var encodedCerts []string  //3.18暂时删除
-			goChain := resp.TLS.PeerCertificates
-			endCert := goChain[0]
-
-			// 证书验证
-			dnsName := resp.Request.URL.Hostname()
-			var VerifyError error
-			certInfo.IsTrusted, VerifyError = utils.VerifyCertificate(goChain, dnsName)
-			if VerifyError != nil {
-				certInfo.VerifyError = VerifyError.Error()
-			} else {
-				certInfo.VerifyError = ""
-			}
-			certInfo.IsExpired = endCert.NotAfter.Before(time.Now())
-			certInfo.IsHostnameMatch = utils.VerifyHostname(endCert, dnsName)
-			certInfo.IsSelfSigned = utils.IsSelfSigned(endCert)
-			certInfo.IsInOrder = utils.IsChainInOrder(goChain)
-			certInfo.TLSVersion = resp.TLS.Version
-
-			// 提取证书的其他信息
-			certInfo.Subject = endCert.Subject.CommonName
-			certInfo.Issuer = endCert.Issuer.String()
-			certInfo.SignatureAlg = endCert.SignatureAlgorithm.String()
-			certInfo.AlgWarning = utils.AlgWarnings(endCert)
-
-			// // 将证书编码为 base64 格式
-			// for _, cert := range goChain {
-			// 	encoded := base64.StdEncoding.EncodeToString(cert.Raw)
-			// 	//encodedData = append(encodedData, []byte(encoded)...)
-			// 	encodedCerts = append(encodedCerts, encoded)
-			// }
-			// //certInfo.RawCert = encodedData
-			// certInfo.RawCerts = encodedCerts  //3.18暂时删除
-
-		}
-
-		config := string(body)
-		// outputfile := fmt.Sprintf("./autoconfig/autoconfig_%s_%d.xml", method, index) //12.18 用Index加以区分
-		// err = saveXMLToFile_autoconfig(outputfile, config, domain)
-		// if err != nil {
-		// 	return "", redirects, &certInfo, err
-		// }
-		return config, redirects, &certInfo, serverHeaders, nil
+		result.RawBody = bodyStr
 	}
+
+	var autoconfigResp models.AutoconfigResponse
+	err = xml.Unmarshal(bodyBytes, &autoconfigResp)
+	if err != nil {
+		result.Error = fmt.Sprintf("failed to unmarshal XML: %v", err)
+
+		// ===== 你的词法判断逻辑在这里完美融合 =====
+		if (strings.HasPrefix(bodyTrimmed, `<?xml version="1.0"`) || strings.HasPrefix(bodyTrimmed, `<clientConfig`)) &&
+			!strings.Contains(bodyTrimmed, `<html`) &&
+			!strings.Contains(bodyTrimmed, `<item`) &&
+			!strings.Contains(bodyTrimmed, `lastmod`) &&
+			!strings.Contains(bodyTrimmed, `lt`) {
+
+			// 标记为畸形XML，交由上层统一保存
+			result.StatusTag = "MALFORMED_XML"
+		} else {
+			result.StatusTag = "UNMARSHAL_ERROR"
+		}
+		return result
+	}
+
+	// 成功获取配置
+	result.StatusTag = "SUCCESS"
+	result.Config = bodyStr
+
+	if resp.TLS != nil {
+		var certInfo models.CertInfo
+		goChain := resp.TLS.PeerCertificates
+		endCert := goChain[0]
+		dnsName := resp.Request.URL.Hostname()
+		certInfo.IsTrusted, _ = utils.VerifyCertificate(goChain, dnsName)
+		certInfo.IsExpired = endCert.NotAfter.Before(time.Now())
+		certInfo.IsHostnameMatch = utils.VerifyHostname(endCert, dnsName)
+		certInfo.IsSelfSigned = utils.IsSelfSigned(endCert)
+		certInfo.IsInOrder = utils.IsChainInOrder(goChain)
+		certInfo.TLSVersion = resp.TLS.Version
+		certInfo.Subject = endCert.Subject.CommonName
+		certInfo.Issuer = endCert.Issuer.String()
+		certInfo.SignatureAlg = endCert.SignatureAlgorithm.String()
+		certInfo.AlgWarning = utils.AlgWarnings(endCert)
+		result.CertInfo = &certInfo
+	}
+
+	return result
 }

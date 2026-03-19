@@ -12,6 +12,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
 	"time"
 )
 
@@ -36,46 +37,9 @@ func QueryAutodiscover(domain string, email string) []models.AutodiscoverResult 
 	}
 	for i, uri := range uris {
 		index := i + 1
-		// === 修改点：接收 serverHeaders ===
-		flag1, flag2, flag3, redirects, config, certinfo, serverHeaders, err := getAutodiscoverConfig(domain, uri, email, "post", index, 0, 0, 0)
-
-		fmt.Printf("flag1: %d\n", flag1)
-		fmt.Printf("flag2: %d\n", flag2)
-		fmt.Printf("flag3: %d\n", flag3)
-
-		// //309
-		// // 1. 先算真理：获取真实的完整大小和 Hash
-		// actualSize := len(config)
-		// actualHash := hashString(config)
-		// // 2. 智能判断：这是不是一个 XML 文件？
-		// // 转换为小写匹配，防止大小写混用
-		// lowerConfig := strings.ToLower(config)
-		// isXML := strings.Contains(lowerConfig, "<?xml") || strings.Contains(lowerConfig, "<autodiscover")
-		// // 3. 精准截断：只有当它【不是 XML】且【极其庞大】时，才动手切掉
-		// // 这样就能完美保留所有超过 1000 字节的真实配置文件！
-		// if !isXML && actualSize > 1000 {
-		// 	config = config[:500] + "\n...[TRUNCATED NON-XML BODY]"
-		// }
-
-		result := models.AutodiscoverResult{
-			Domain: domain,
-			Method: "POST",
-			// Email:     email, // 新增 TODO:CNAME字段？
-			Index:     index,
-			URI:       uri,
-			Redirects: redirects,
-			Config:    config,
-			// ResponseSize:     len(config),        // 新增
-			// ResponseBodyHash: hashString(config), // 新增
-			// ResponseSize:     actualSize, // 记录原始真实大小
-			// ResponseBodyHash: actualHash, // 记录原始完整 Hash
-			CertInfo:      certinfo,
-			ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-		}
-		if err != nil {
-			result.Error = err.Error()
-		}
-		results = append(results, result)
+		res := getAutodiscoverConfig(domain, uri, email, "post", index, 0, 0, 0)
+		res.URI = uri
+		results = append(results, *res)
 	}
 
 	// method2: 通过 DNS SRV 记录找到 server, 再进行 POST 请求
@@ -83,84 +47,24 @@ func QueryAutodiscover(domain string, email string) []models.AutodiscoverResult 
 	uriDNS, _, err := utils.LookupSRVWithAD_autodiscover(domain)
 	if err != nil {
 		result_srv := models.AutodiscoverResult{
-			Domain: domain,
-			// Email:  email, // 新增
-			Method: "srv-post",
-			Index:  0,
-			Error:  fmt.Sprintf("Failed to lookup SRV records for %s: %v", service, err),
+			Domain:    domain,
+			Method:    "srv-post",
+			Index:     0,
+			Error:     fmt.Sprintf("Failed to lookup SRV records for %s: %v", service, err),
+			StatusTag: "SRV_LOOKUP_FAILED",
 		}
 		results = append(results, result_srv)
 	} else {
-		// === 修改点：接收 serverHeaders ===
-		_, _, _, redirects, config, certinfo, serverHeaders, err1 := getAutodiscoverConfig(domain, uriDNS, email, "srv-post", 0, 0, 0, 0)
-		// // 1. 先算真理：获取真实的完整大小和 Hash
-		// actualSize := len(config)
-		// actualHash := hashString(config)
-		// // 2. 智能判断：这是不是一个 XML 文件？
-		// // 转换为小写匹配，防止大小写混用
-		// lowerConfig := strings.ToLower(config)
-		// isXML := strings.Contains(lowerConfig, "<?xml") || strings.Contains(lowerConfig, "<autodiscover")
-		// // 3. 精准截断：只有当它【不是 XML】且【极其庞大】时，才动手切掉
-		// // 这样就能完美保留所有超过 1000 字节的真实配置文件！
-		// if !isXML && actualSize > 1000 {
-		// 	config = config[:500] + "\n...[TRUNCATED NON-XML BODY]"
-		// }
-
-		result_srv := models.AutodiscoverResult{
-			Domain: domain,
-			//Email:     email, // 新增
-			Method:    "srv-post",
-			Index:     0,
-			Redirects: redirects,
-			Config:    config,
-			// ResponseSize:     len(config),        // 新增
-			// ResponseBodyHash: hashString(config), // 新增
-			// ResponseSize:     actualSize, // 记录原始真实大小
-			// ResponseBodyHash: actualHash, // 记录原始完整 Hash
-			CertInfo:      certinfo,
-			ServerHeaders: serverHeaders, // 保存抓取到的 Headers
-		}
-		if err1 != nil {
-			result_srv.Error = err1.Error()
-		}
-		results = append(results, result_srv)
+		res := getAutodiscoverConfig(domain, uriDNS, email, "srv-post", 0, 0, 0, 0)
+		res.URI = uriDNS
+		results = append(results, *res)
 	}
 
-	// method3：先 GET 找到 server，再 POST 请求 (这里暂未修改 GET_AutodiscoverConfig 的签名，故 Headers 为 nil)
+	// method3：先 GET 找到 server，再 POST 请求
 	getURI := fmt.Sprintf("http://autodiscover.%s/autodiscover/autodiscover.xml", domain)
-	redirects, config, certinfo, serverheaders, err := GET_AutodiscoverConfig(domain, getURI, email)
-	// // 1. 先算真理：获取真实的完整大小和 Hash
-	// actualSize := len(config)
-	// actualHash := hashString(config)
-	// // 2. 智能判断：这是不是一个 XML 文件？
-	// // 转换为小写匹配，防止大小写混用
-	// lowerConfig := strings.ToLower(config)
-	// isXML := strings.Contains(lowerConfig, "<?xml") || strings.Contains(lowerConfig, "<autodiscover")
-	// // 3. 精准截断：只有当它【不是 XML】且【极其庞大】时，才动手切掉
-	// // 这样就能完美保留所有超过 1000 字节的真实配置文件！
-	// if !isXML && actualSize > 1000 {
-	// 	config = config[:500] + "\n...[TRUNCATED NON-XML BODY]"
-	// }
-
-	result_GET := models.AutodiscoverResult{
-		Domain: domain,
-		Method: "get-post",
-		//Email:     email, // 新增
-		Index:     0,
-		URI:       getURI,
-		Redirects: redirects,
-		Config:    config,
-		// ResponseSize:     len(config),        // 新增
-		// ResponseBodyHash: hashString(config), // 新增
-		// ResponseSize:     actualSize, // 记录原始真实大小
-		// ResponseBodyHash: actualHash, // 记录原始完整 Hash
-		CertInfo:      certinfo,
-		ServerHeaders: serverheaders,
-	}
-	if err != nil {
-		result_GET.Error = err.Error()
-	}
-	results = append(results, result_GET)
+	resGET := GET_AutodiscoverConfig(domain, getURI, email)
+	resGET.URI = getURI
+	results = append(results, *resGET)
 
 	// method4: 直接 GET 请求
 	direct_getURIs := []string{
@@ -171,48 +75,28 @@ func QueryAutodiscover(domain string, email string) []models.AutodiscoverResult 
 	}
 	for i, direct_getURI := range direct_getURIs {
 		index := i + 1
-		// 注意：这里调用的是 direct_GET...，如果你也想抓取它的 Header，需要类似修改 direct_GET_AutodiscoverConfig
-		_, _, _, redirects, config, certinfo, serverheaders, err := direct_GET_AutodiscoverConfig(domain, direct_getURI, email, "get", index, 0, 0, 0)
-
-		// // 1. 先算真理：获取真实的完整大小和 Hash
-		// actualSize := len(config)
-		// actualHash := hashString(config)
-
-		// // 2. 智能判断：这是不是一个 XML 文件？
-		// // 转换为小写匹配，防止大小写混用
-		// lowerConfig := strings.ToLower(config)
-		// isAutodiscover := strings.Contains(lowerConfig, "<autodiscover") || strings.Contains(lowerConfig, "autodiscover xmlns") //这里怎么判定不会丢？TODO
-
-		// // 3. 精准截断：只有当它【不是 XML】且【极其庞大】时，才动手切掉
-		// // 这样就能完美保留所有超过 1000 字节的真实配置文件！
-		// if !isAutodiscover && actualSize > 1000 {
-		// 	config = config[:500] + "\n...[TRUNCATED NON-XML BODY]"
-		// }
-
-		result := models.AutodiscoverResult{
-			Domain:    domain,
-			Method:    "direct_get",
-			Index:     index,
-			URI:       direct_getURI,
-			Redirects: redirects,
-			Config:    config,
-			// ResponseSize:     len(config),        // 新增
-			// ResponseBodyHash: hashString(config), // 新增
-			CertInfo:      certinfo,
-			ServerHeaders: serverheaders,
-		}
-		if err != nil {
-			result.Error = err.Error()
-		}
-		results = append(results, result)
+		res := direct_GET_AutodiscoverConfig(domain, direct_getURI, email, "direct_get", index, 0, 0, 0)
+		res.URI = direct_getURI
+		results = append(results, *res)
 	}
 
 	return results
 }
 
 // getAutodiscoverConfig 执行核心的 POST 请求逻辑
-// 修改了返回值签名，增加了 map[string]string 用于返回 Headers
-func getAutodiscoverConfig(origin_domain string, uri string, email_add string, method string, index int, flag1 int, flag2 int, flag3 int) (int, int, int, []map[string]interface{}, string, *models.CertInfo, map[string]string, error) {
+func getAutodiscoverConfig(origin_domain string, uri string, email_add string, method string, index int, flag1 int, flag2 int, flag3 int) *models.AutodiscoverResult {
+	result := &models.AutodiscoverResult{
+		Domain:        origin_domain,
+		Method:        method,
+		Index:         index,
+		URI:           uri,
+		Flag1:         flag1,
+		Flag2:         flag2,
+		Flag3:         flag3,
+		ServerHeaders: make(map[string]string),
+		Redirects:     []map[string]interface{}{},
+	}
+
 	xmlRequest := fmt.Sprintf(`
 		<Autodiscover xmlns="http://schemas.microsoft.com/exchange/autodiscover/outlook/requestschema/2006">
 			<Request>
@@ -223,331 +107,133 @@ func getAutodiscoverConfig(origin_domain string, uri string, email_add string, m
 
 	req, err := http.NewRequest("POST", uri, bytes.NewBufferString(xmlRequest))
 	if err != nil {
-		fmt.Printf("Error creating request for %s: %v\n", uri, err)
-		// 返回 nil Headers
-		return flag1, flag2, flag3, []map[string]interface{}{}, "", nil, nil, fmt.Errorf("failed to create request: %v", err)
+		result.Error = fmt.Sprintf("failed to create request: %v", err)
+		result.StatusTag = "REQ_CREATE_ERROR"
+		return result
 	}
 	req.Header.Set("Content-Type", "text/xml")
 	client := &http.Client{
 		Transport: &http.Transport{
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: true,
-				MinVersion:         tls.VersionTLS10,
-			},
-		},
-		CheckRedirect: func(req *http.Request, via []*http.Request) error {
-			return http.ErrUseLastResponse // 禁止重定向
-		},
-		Timeout: 15 * time.Second,
-	}
-
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Printf("Error sending request to %s: %v\n", uri, err)
-		// 返回 nil Headers
-		return flag1, flag2, flag3, []map[string]interface{}{}, "", nil, nil, fmt.Errorf("failed to send request: %v", err)
-	}
-
-	// === 新增代码：提取关键指纹 Headers ===
-	serverHeaders := make(map[string]string)
-	// 提取主要指纹
-	serverHeaders["Server"] = resp.Header.Get("Server")
-	serverHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
-	// Exchange 特有
-	serverHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
-	serverHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
-	// 其他可能的特征
-	serverHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
-	// ===================================
-
-	redirects := utils.GetRedirects(resp) // 获取当前重定向链
-	defer resp.Body.Close()
-
-	if resp.StatusCode == http.StatusFound || resp.StatusCode == http.StatusMovedPermanently {
-		// 处理重定向
-		flag1 = flag1 + 1
-		//fmt.Printf("flag1now:%d\n", flag1)
-		location := resp.Header.Get("Location")
-		fmt.Printf("Redirect to: %s\n", location)
-		if location == "" {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("missing Location header in redirect")
-		} else if flag1 > 10 {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("too many redirect times")
-		}
-
-		newURI, err := url.Parse(location)
-		if err != nil {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to parse redirect URL: %s", location)
-		}
-
-		// 递归调用并合并重定向链
-		// 注意：这里接收递归调用的返回值，包括新的 Headers
-		newflag1, newflag2, newflag3, nextRedirects, result, certinfo, newHeaders, err := getAutodiscoverConfig(origin_domain, newURI.String(), email_add, method, index, flag1, flag2, flag3)
-
-		// 优先返回最终服务器的 Headers (newHeaders)，如果最终服务器没返回则使用当前的
-		finalHeaders := newHeaders
-		if finalHeaders == nil || len(finalHeaders) == 0 {
-			finalHeaders = serverHeaders
-		}
-
-		return newflag1, newflag2, newflag3, append(redirects, nextRedirects...), result, certinfo, finalHeaders, err
-
-	} else if resp.StatusCode >= 200 && resp.StatusCode < 300 {
-		// 处理成功响应
-		body, err := io.ReadAll(resp.Body)
-		if err != nil {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to read response body: %v", err)
-		}
-
-		var autodiscoverResp models.AutodiscoverResponse
-		err = xml.Unmarshal(body, &autodiscoverResp)
-		if err != nil {
-			// Unmarshal 失败也返回 headers，因为这可能也是指纹的一部分
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to unmarshal XML: %v", err)
-		}
-
-		// 处理 redirectAddr 和 redirectUrl
-		if autodiscoverResp.Response.Account.Action == "redirectAddr" {
-			flag2 = flag2 + 1
-			newEmail := autodiscoverResp.Response.Account.RedirectAddr
-			if newEmail != "" && flag2 <= 10 {
-				newflag1, newflag2, newflag3, nextRedirects, result, certinfo, newHeaders, err := getAutodiscoverConfig(origin_domain, uri, newEmail, method, index, flag1, flag2, flag3)
-				return newflag1, newflag2, newflag3, append(redirects, nextRedirects...), result, certinfo, newHeaders, err
-			} else if newEmail != "" {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("too many RedirectAddr")
-			} else {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("nil ReAddr")
-			}
-		} else if autodiscoverResp.Response.Account.Action == "redirectUrl" {
-			flag3 = flag3 + 1
-			newUri := autodiscoverResp.Response.Account.RedirectUrl
-			if newUri != "" && flag3 <= 10 {
-				newflag1, newflag2, newflag3, nextRedirects, result, certinfo, newHeaders, err := getAutodiscoverConfig(origin_domain, newUri, email_add, method, index, flag1, flag2, flag3)
-				return newflag1, newflag2, newflag3, append(redirects, nextRedirects...), result, certinfo, newHeaders, err
-			} else if newUri != "" {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("too many RedirectUrl")
-			} else {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("nil Reuri")
-			}
-		} else if autodiscoverResp.Response.Account.Action == "settings" {
-			// 成功获取配置
-			var certInfo models.CertInfo
-			// 提取证书信息
-			if resp.TLS != nil {
-				//var encodedCerts []string //3.09暂时删除
-				goChain := resp.TLS.PeerCertificates
-				endCert := goChain[0]
-
-				// 证书验证
-				dnsName := resp.Request.URL.Hostname()
-				var VerifyError error
-				certInfo.IsTrusted, VerifyError = utils.VerifyCertificate(goChain, dnsName)
-				if VerifyError != nil {
-					certInfo.VerifyError = VerifyError.Error()
-				} else {
-					certInfo.VerifyError = ""
-				}
-
-				certInfo.IsExpired = endCert.NotAfter.Before(time.Now())
-				certInfo.IsHostnameMatch = utils.VerifyHostname(endCert, dnsName)
-				certInfo.IsSelfSigned = utils.IsSelfSigned(endCert)
-				certInfo.IsInOrder = utils.IsChainInOrder(goChain)
-				certInfo.TLSVersion = resp.TLS.Version
-				certInfo.Subject = endCert.Subject.CommonName
-				certInfo.Issuer = endCert.Issuer.String()
-				certInfo.SignatureAlg = endCert.SignatureAlgorithm.String()
-				certInfo.AlgWarning = utils.AlgWarnings(endCert)
-
-				// for _, cert := range goChain {
-				// 	encoded := base64.StdEncoding.EncodeToString(cert.Raw)
-				// 	encodedCerts = append(encodedCerts, encoded)
-				// }
-				// certInfo.RawCerts = encodedCerts
-				//3.09暂时删除
-			}
-			// 成功时返回 serverHeaders
-			return flag1, flag2, flag3, redirects, string(body), &certInfo, serverHeaders, nil
-
-		} else if autodiscoverResp.Response.Error != nil {
-			// 处理 XML 内部的错误响应
-			errorConfig := fmt.Sprintf("Errorcode:%d-%s\n", autodiscoverResp.Response.Error.ErrorCode, autodiscoverResp.Response.Error.Message)
-			// 返回 headers，因为 Error XML 也是由特定软件生成的
-			return flag1, flag2, flag3, redirects, errorConfig, nil, serverHeaders, nil
-		} else {
-			// 处理 Response 不合法
-			alsoErrorConfig := fmt.Sprintf("Non-valid Response element for %s: %s\n:", email_add, string(body))
-			return flag1, flag2, flag3, redirects, alsoErrorConfig, nil, serverHeaders, nil
-		}
-	} else {
-		// 处理非 200/300 状态码 (如 401, 404, 500)
-		badResponse := fmt.Sprintf("Bad response for %s: %d\n", email_add, resp.StatusCode)
-		// 修改后：读取真实的 HTTP Body 并返回，这样 Hash 才能真正反映服务器的特征
-		// bodyBytes, _ := io.ReadAll(resp.Body)
-		// actualBody := string(bodyBytes)
-
-		return flag1, flag2, flag3, redirects, badResponse, nil, serverHeaders, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
-
-	}
-}
-
-// GET_AutodiscoverConfig
-func GET_AutodiscoverConfig(origin_domain string, uri string, email_add string) ([]map[string]interface{}, string, *models.CertInfo, map[string]string, error) {
-	client := &http.Client{
-		Transport: &http.Transport{
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: true,
-				MinVersion:         tls.VersionTLS10,
-			},
-		},
-		CheckRedirect: func(req *http.Request, via []*http.Request) error {
-			return http.ErrUseLastResponse // 禁止重定向
-		},
-		Timeout: 15 * time.Second,
-	}
-
-	resp, err := client.Get(uri)
-	if err != nil {
-		return []map[string]interface{}{}, "", nil, nil, fmt.Errorf("failed to send request: %v", err)
-	}
-
-	// === 新增代码：提取关键指纹 Headers ===
-	serverHeaders := make(map[string]string)
-	// 提取主要指纹
-	serverHeaders["Server"] = resp.Header.Get("Server")
-	serverHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
-	// Exchange 特有
-	serverHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
-	serverHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
-	// 其他可能的特征
-	serverHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
-	// ===================================
-
-	redirects := utils.GetRedirects(resp)
-	defer resp.Body.Close()
-
-	if resp.StatusCode == http.StatusFound || resp.StatusCode == http.StatusMovedPermanently {
-		location := resp.Header.Get("Location")
-		fmt.Printf("Redirect to: %s\n", location)
-		if location == "" {
-			return nil, "", nil, serverHeaders, fmt.Errorf("missing Location header in redirect")
-		}
-		newURI, err := url.Parse(location)
-		if err != nil {
-			return nil, "", nil, serverHeaders, fmt.Errorf("failed to parse redirect URL: %s", location)
-		}
-
-		// 递归调用, 注意这里 getAutodiscoverConfig 的返回值多了 headers，我们需要用 _ 忽略它，或者修改 GET 函数签名
-		// 为了保持兼容性，这里暂时忽略 headers
-		_, _, _, nextRedirects, result, certinfo, serverheaders, err := getAutodiscoverConfig(origin_domain, newURI.String(), email_add, "get_post", 0, 0, 0, 0)
-		return append(redirects, nextRedirects...), result, certinfo, serverheaders, err //TODO
-	} else {
-		// 修改后：读取真实的 HTTP Body 并返回，这样 Hash 才能真正反映服务器的特征
-		bodyBytes, _ := io.ReadAll(resp.Body)
-		actualBody := string(bodyBytes)
-		return nil, actualBody, nil, serverHeaders, fmt.Errorf("not find Redirect Statuscode")
-	}
-}
-
-// direct_GET_AutodiscoverConfig
-func direct_GET_AutodiscoverConfig(origin_domain string, uri string, email_add string, method string, index int, flag1 int, flag2 int, flag3 int) (int, int, int, []map[string]interface{}, string, *models.CertInfo, map[string]string, error) {
-	client := &http.Client{
-		Transport: &http.Transport{
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: true,
-				MinVersion:         tls.VersionTLS10,
-			},
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true, MinVersion: tls.VersionTLS10},
 		},
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
 		},
 		Timeout: 15 * time.Second,
 	}
-	resp, err := client.Get(uri)
+
+	resp, err := client.Do(req)
 	if err != nil {
-		return flag1, flag2, flag3, []map[string]interface{}{}, "", nil, nil, fmt.Errorf("failed to send request: %v", err)
+		result.Error = fmt.Sprintf("failed to send request: %v", err)
+		result.StatusTag = "REQ_SEND_ERROR"
+		return result
 	}
 
-	// === 新增代码：提取关键指纹 Headers ===
-	serverHeaders := make(map[string]string)
-	// 提取主要指纹
-	serverHeaders["Server"] = resp.Header.Get("Server")
-	serverHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
-	// Exchange 特有
-	serverHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
-	serverHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
-	// 其他可能的特征
-	serverHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
-	// ===================================
+	// 提取关键指纹 Headers
+	result.ServerHeaders["Server"] = resp.Header.Get("Server")
+	result.ServerHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
+	result.ServerHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
+	result.ServerHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
+	result.ServerHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
 
-	redirects := utils.GetRedirects(resp)
+	currentRedirects := utils.GetRedirects(resp)
 	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusFound || resp.StatusCode == http.StatusMovedPermanently {
-		flag1 = flag1 + 1
+		result.Flag1++
 		location := resp.Header.Get("Location")
-		fmt.Printf("Redirect to: %s\n", location)
 		if location == "" {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("missing Location header in redirect")
-		} else if flag1 > 10 {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("too many redirect times")
+			result.Error = "missing Location header in redirect"
+			result.StatusTag = "HTTP_REDIRECT_MISSING_LOCATION"
+			result.Redirects = currentRedirects
+			return result
+		} else if result.Flag1 > 10 {
+			result.Error = "too many redirect times"
+			result.StatusTag = "HTTP_REDIRECT_LIMIT"
+			result.Redirects = currentRedirects
+			return result
 		}
 
 		newURI, err := url.Parse(location)
 		if err != nil {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to parse redirect URL: %s", location)
+			result.Error = fmt.Sprintf("failed to parse redirect URL: %s", location)
+			result.StatusTag = "HTTP_REDIRECT_PARSE_ERROR"
+			result.Redirects = currentRedirects
+			return result
 		}
 
-		newflag1, newflag2, newflag3, nextRedirects, result, certinfo, newHeaders, err := direct_GET_AutodiscoverConfig(origin_domain, newURI.String(), email_add, method, index, flag1, flag2, flag3)
-		// 优先返回最终服务器的 Headers (newHeaders)，如果最终服务器没返回则使用当前的
-		finalHeaders := newHeaders
-		if finalHeaders == nil || len(finalHeaders) == 0 {
-			finalHeaders = serverHeaders
+		child := getAutodiscoverConfig(origin_domain, newURI.String(), email_add, method, index, result.Flag1, result.Flag2, result.Flag3)
+		child.Redirects = append(currentRedirects, child.Redirects...)
+		if len(child.ServerHeaders) == 0 {
+			child.ServerHeaders = result.ServerHeaders
 		}
-		return newflag1, newflag2, newflag3, append(redirects, nextRedirects...), result, certinfo, finalHeaders, err
+		return child
+
 	} else if resp.StatusCode >= 200 && resp.StatusCode < 300 {
 		body, err := io.ReadAll(resp.Body)
 		if err != nil {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to read response body: %v", err)
+			result.Error = fmt.Sprintf("failed to read response body: %v", err)
+			result.StatusTag = "READ_BODY_ERROR"
+			result.Redirects = currentRedirects
+			return result
 		}
+
+		bodyStr := string(body)
+		result.Redirects = currentRedirects
+		result.RawBody = bodyStr // 核心：默认保留 RawBody，不论后续解析成功还是失败
+
 		var autodiscoverResp models.AutodiscoverResponse
 		err = xml.Unmarshal(body, &autodiscoverResp)
 		if err != nil {
-			return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("failed to unmarshal XML: %v", err)
-		}
-		if autodiscoverResp.Response.Account.Action == "redirectAddr" {
-			flag2 = flag2 + 1
-			newEmail := autodiscoverResp.Response.Account.RedirectAddr
-			if newEmail != "" {
-				return flag1, flag2, flag3, redirects, string(body), nil, serverHeaders, nil
+			result.Error = fmt.Sprintf("failed to unmarshal XML: %v", err)
+			lowerConfig := strings.ToLower(bodyStr)
+			if !strings.Contains(lowerConfig, `<html`) && !strings.Contains(lowerConfig, `<item`) {
+				result.StatusTag = "MALFORMED_XML" // 这里就是你要存入文件的残缺XML
 			} else {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("nil ReAddr")
+				result.StatusTag = "UNMARSHAL_ERROR"
+			}
+			return result
+		}
+
+		if autodiscoverResp.Response.Account.Action == "redirectAddr" {
+			result.Flag2++
+			newEmail := autodiscoverResp.Response.Account.RedirectAddr
+			if newEmail != "" && result.Flag2 <= 10 {
+				child := getAutodiscoverConfig(origin_domain, uri, newEmail, method, index, result.Flag1, result.Flag2, result.Flag3)
+				child.Redirects = append(currentRedirects, child.Redirects...)
+				if len(child.ServerHeaders) == 0 {
+					child.ServerHeaders = result.ServerHeaders
+				}
+				return child
+			} else {
+				result.Error = "too many RedirectAddr or nil ReAddr"
+				result.StatusTag = "REDIRECT_ADDR_FAILED"
+				return result
 			}
 		} else if autodiscoverResp.Response.Account.Action == "redirectUrl" {
-			flag3 = flag3 + 1
+			result.Flag3++
 			newUri := autodiscoverResp.Response.Account.RedirectUrl
-			if newUri != "" && flag3 <= 10 {
-				newflag1, newflag2, newflag3, nextRedirects, result, certinfo, serverheaders, err := direct_GET_AutodiscoverConfig(origin_domain, newUri, email_add, method, index, flag1, flag2, flag3)
-				return newflag1, newflag2, newflag3, append(redirects, nextRedirects...), result, certinfo, serverheaders, err
-			} else if newUri != "" {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("too many RedirectUrl")
+			if newUri != "" && result.Flag3 <= 10 {
+				child := getAutodiscoverConfig(origin_domain, newUri, email_add, method, index, result.Flag1, result.Flag2, result.Flag3)
+				child.Redirects = append(currentRedirects, child.Redirects...)
+				if len(child.ServerHeaders) == 0 {
+					child.ServerHeaders = result.ServerHeaders
+				}
+				return child
 			} else {
-				return flag1, flag2, flag3, redirects, "", nil, serverHeaders, fmt.Errorf("nil Reurl")
+				result.Error = "too many RedirectUrl or nil Reuri"
+				result.StatusTag = "REDIRECT_URL_FAILED"
+				return result
 			}
 		} else if autodiscoverResp.Response.Account.Action == "settings" {
-			var certInfo models.CertInfo
+			result.StatusTag = "SUCCESS"
+			result.Config = bodyStr
 			if resp.TLS != nil {
-				//var encodedCerts []string  //3.09暂时删除
+				var certInfo models.CertInfo
 				goChain := resp.TLS.PeerCertificates
 				endCert := goChain[0]
-
 				dnsName := resp.Request.URL.Hostname()
-				var VerifyError error
-				certInfo.IsTrusted, VerifyError = utils.VerifyCertificate(goChain, dnsName)
-				if VerifyError != nil {
-					certInfo.VerifyError = VerifyError.Error()
-				} else {
-					certInfo.VerifyError = ""
-				}
+				certInfo.IsTrusted, _ = utils.VerifyCertificate(goChain, dnsName)
 				certInfo.IsExpired = endCert.NotAfter.Before(time.Now())
 				certInfo.IsHostnameMatch = utils.VerifyHostname(endCert, dnsName)
 				certInfo.IsSelfSigned = utils.IsSelfSigned(endCert)
@@ -557,24 +243,225 @@ func direct_GET_AutodiscoverConfig(origin_domain string, uri string, email_add s
 				certInfo.Issuer = endCert.Issuer.String()
 				certInfo.SignatureAlg = endCert.SignatureAlgorithm.String()
 				certInfo.AlgWarning = utils.AlgWarnings(endCert)
-
-				// for _, cert := range goChain {
-				// 	encoded := base64.StdEncoding.EncodeToString(cert.Raw)
-				// 	encodedCerts = append(encodedCerts, encoded)
-				// }
-				// certInfo.RawCerts = encodedCerts
-				//3.09暂时删除
+				result.CertInfo = &certInfo
 			}
-			return flag1, flag2, flag3, redirects, string(body), &certInfo, nil, nil
+			return result
 		} else if autodiscoverResp.Response.Error != nil {
-			errorConfig := fmt.Sprintf("Errorcode:%d-%s\n", autodiscoverResp.Response.Error.ErrorCode, autodiscoverResp.Response.Error.Message)
-			return flag1, flag2, flag3, redirects, errorConfig, nil, serverHeaders, nil
+			result.Error = fmt.Sprintf("Errorcode:%v-%s", autodiscoverResp.Response.Error.ErrorCode, autodiscoverResp.Response.Error.Message)
+			result.StatusTag = "XML_API_ERROR"
+			return result
 		} else {
-			alsoErrorConfig := fmt.Sprintf("Non-valid Response element for %s: %s\n:", email_add, string(body))
-			return flag1, flag2, flag3, redirects, alsoErrorConfig, nil, serverHeaders, nil
+			result.Error = fmt.Sprintf("Non-valid Response element for %s", email_add)
+			result.StatusTag = "INVALID_RESPONSE_ELEMENT"
+			return result
 		}
 	} else {
-		bad_response := fmt.Sprintf("Bad response for %s:%d\n", email_add, resp.StatusCode)
-		return flag1, flag2, flag3, redirects, bad_response, nil, serverHeaders, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		result.RawBody = string(bodyBytes)
+		result.Error = fmt.Sprintf("unexpected status code: %d", resp.StatusCode)
+		result.StatusTag = "HTTP_ERROR"
+		result.Redirects = currentRedirects
+		return result
+	}
+}
+
+// GET_AutodiscoverConfig
+func GET_AutodiscoverConfig(origin_domain string, uri string, email_add string) *models.AutodiscoverResult {
+	result := &models.AutodiscoverResult{
+		Domain:        origin_domain,
+		Method:        "get-post",
+		URI:           uri,
+		ServerHeaders: make(map[string]string),
+		Redirects:     []map[string]interface{}{},
+	}
+
+	client := &http.Client{
+		Transport: &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true, MinVersion: tls.VersionTLS10},
+		},
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+		Timeout: 15 * time.Second,
+	}
+
+	resp, err := client.Get(uri)
+	if err != nil {
+		result.Error = fmt.Sprintf("failed to send GET request: %v", err)
+		result.StatusTag = "REQ_SEND_ERROR"
+		return result
+	}
+	defer resp.Body.Close()
+
+	result.ServerHeaders["Server"] = resp.Header.Get("Server")
+	result.ServerHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
+	result.ServerHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
+	result.ServerHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
+	result.ServerHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
+
+	currentRedirects := utils.GetRedirects(resp)
+
+	if resp.StatusCode == http.StatusFound || resp.StatusCode == http.StatusMovedPermanently {
+		location := resp.Header.Get("Location")
+		if location == "" {
+			result.Error = "missing Location header in redirect"
+			result.StatusTag = "HTTP_REDIRECT_MISSING_LOCATION"
+			return result
+		}
+		newURI, err := url.Parse(location)
+		if err != nil {
+			result.Error = fmt.Sprintf("failed to parse redirect URL: %s", location)
+			result.StatusTag = "HTTP_REDIRECT_PARSE_ERROR"
+			return result
+		}
+		child := getAutodiscoverConfig(origin_domain, newURI.String(), email_add, "get_post", 0, 0, 0, 0)
+		child.Redirects = append(currentRedirects, child.Redirects...)
+		if len(child.ServerHeaders) == 0 {
+			child.ServerHeaders = result.ServerHeaders
+		}
+		return child
+	} else {
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		result.RawBody = string(bodyBytes)
+		result.Error = "not find Redirect Statuscode"
+		result.StatusTag = "NO_REDIRECT_TO_POST"
+		return result
+	}
+}
+
+// direct_GET_AutodiscoverConfig
+func direct_GET_AutodiscoverConfig(origin_domain string, uri string, email_add string, method string, index int, flag1 int, flag2 int, flag3 int) *models.AutodiscoverResult {
+	result := &models.AutodiscoverResult{
+		Domain:        origin_domain,
+		Method:        method,
+		Index:         index,
+		URI:           uri,
+		Flag1:         flag1,
+		Flag2:         flag2,
+		Flag3:         flag3,
+		ServerHeaders: make(map[string]string),
+		Redirects:     []map[string]interface{}{},
+	}
+
+	client := &http.Client{
+		Transport: &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true, MinVersion: tls.VersionTLS10},
+		},
+		CheckRedirect: func(req *http.Request, via []*http.Request) error { return http.ErrUseLastResponse },
+		Timeout:       15 * time.Second,
+	}
+
+	resp, err := client.Get(uri)
+	if err != nil {
+		result.Error = fmt.Sprintf("failed to send request: %v", err)
+		result.StatusTag = "REQ_SEND_ERROR"
+		return result
+	}
+	defer resp.Body.Close()
+
+	result.ServerHeaders["Server"] = resp.Header.Get("Server")
+	result.ServerHeaders["X-Powered-By"] = resp.Header.Get("X-Powered-By")
+	result.ServerHeaders["X-FEServer"] = resp.Header.Get("X-FEServer")
+	result.ServerHeaders["X-AspNet-Version"] = resp.Header.Get("X-AspNet-Version")
+	result.ServerHeaders["Set-Cookie"] = resp.Header.Get("Set-Cookie")
+
+	currentRedirects := utils.GetRedirects(resp)
+
+	if resp.StatusCode == http.StatusFound || resp.StatusCode == http.StatusMovedPermanently {
+		result.Flag1++
+		location := resp.Header.Get("Location")
+		if location == "" || result.Flag1 > 10 {
+			result.Error = "missing location or too many redirects"
+			result.StatusTag = "HTTP_REDIRECT_FAILED"
+			result.Redirects = currentRedirects
+			return result
+		}
+		newURI, err := url.Parse(location)
+		if err != nil {
+			result.Error = "failed to parse redirect URL"
+			result.StatusTag = "HTTP_REDIRECT_PARSE_ERROR"
+			result.Redirects = currentRedirects
+			return result
+		}
+		child := direct_GET_AutodiscoverConfig(origin_domain, newURI.String(), email_add, method, index, result.Flag1, result.Flag2, result.Flag3)
+		child.Redirects = append(currentRedirects, child.Redirects...)
+		if len(child.ServerHeaders) == 0 {
+			child.ServerHeaders = result.ServerHeaders
+		}
+		return child
+	} else if resp.StatusCode >= 200 && resp.StatusCode < 300 {
+		body, _ := io.ReadAll(resp.Body)
+		bodyStr := string(body)
+		result.Redirects = currentRedirects
+		result.RawBody = bodyStr
+
+		var autodiscoverResp models.AutodiscoverResponse
+		err = xml.Unmarshal(body, &autodiscoverResp)
+		if err != nil {
+			result.Error = fmt.Sprintf("failed to unmarshal XML: %v", err)
+			result.StatusTag = "UNMARSHAL_ERROR"
+			return result
+		}
+
+		if autodiscoverResp.Response.Account.Action == "redirectAddr" {
+			result.Flag2++
+			newEmail := autodiscoverResp.Response.Account.RedirectAddr
+			if newEmail != "" && result.Flag2 <= 10 {
+				child := direct_GET_AutodiscoverConfig(origin_domain, uri, newEmail, method, index, result.Flag1, result.Flag2, result.Flag3)
+				child.Redirects = append(currentRedirects, child.Redirects...)
+				if len(child.ServerHeaders) == 0 {
+					child.ServerHeaders = result.ServerHeaders
+				}
+				return child
+			}
+			result.StatusTag = "REDIRECT_ADDR_FAILED"
+			return result
+		} else if autodiscoverResp.Response.Account.Action == "redirectUrl" {
+			result.Flag3++
+			newUri := autodiscoverResp.Response.Account.RedirectUrl
+			if newUri != "" && result.Flag3 <= 10 {
+				child := direct_GET_AutodiscoverConfig(origin_domain, newUri, email_add, method, index, result.Flag1, result.Flag2, result.Flag3)
+				child.Redirects = append(currentRedirects, child.Redirects...)
+				if len(child.ServerHeaders) == 0 {
+					child.ServerHeaders = result.ServerHeaders
+				}
+				return child
+			}
+			result.StatusTag = "REDIRECT_URL_FAILED"
+			return result
+		} else if autodiscoverResp.Response.Account.Action == "settings" {
+			result.StatusTag = "SUCCESS"
+			result.Config = bodyStr
+			// 证书验证代码省略(与上面一致)
+			if resp.TLS != nil {
+				var certInfo models.CertInfo
+				goChain := resp.TLS.PeerCertificates
+				endCert := goChain[0]
+				dnsName := resp.Request.URL.Hostname()
+				certInfo.IsTrusted, _ = utils.VerifyCertificate(goChain, dnsName)
+				certInfo.IsExpired = endCert.NotAfter.Before(time.Now())
+				certInfo.IsHostnameMatch = utils.VerifyHostname(endCert, dnsName)
+				certInfo.IsSelfSigned = utils.IsSelfSigned(endCert)
+				certInfo.IsInOrder = utils.IsChainInOrder(goChain)
+				certInfo.TLSVersion = resp.TLS.Version
+				certInfo.Subject = endCert.Subject.CommonName
+				certInfo.Issuer = endCert.Issuer.String()
+				certInfo.SignatureAlg = endCert.SignatureAlgorithm.String()
+				certInfo.AlgWarning = utils.AlgWarnings(endCert)
+				result.CertInfo = &certInfo
+			}
+			return result
+		} else {
+			result.Error = "XML Error or Non-valid Response element"
+			result.StatusTag = "INVALID_RESPONSE_ELEMENT"
+			return result
+		}
+	} else {
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		result.RawBody = string(bodyBytes)
+		result.Error = fmt.Sprintf("unexpected status code: %d", resp.StatusCode)
+		result.StatusTag = "HTTP_ERROR"
+		result.Redirects = currentRedirects
+		return result
 	}
 }

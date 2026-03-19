@@ -7,125 +7,144 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"runtime"
-	"runtime/debug"
 	"strings"
 	"sync"
+	"time"
 )
 
-// 手动释放内存，防止 OOM //3.17
-func freeMem() {
-	runtime.GC()
-	debug.FreeOSMemory()
+// ScanTask 用于在 Channel 中传递域名和它对应的行号
+type ScanTask struct {
+	Domain string
+	Index  int
 }
 
-// JSONL 文件写入，使用缓冲减少 I/O 竞争
-func writeResultToJSONLFile(fileName string, results []models.DomainResult, fileLock *sync.Mutex) error {
-	fileLock.Lock()
-	defer fileLock.Unlock()
+func Process() {
+	// 配置参数
+	// csvFile := "/home/wzq/project/autov/tranco_KW6JW.csv"
+	// outputFile := "init.jsonl"
+	// concurrency := 200 // 原来使用 semaphore 控制的并发数，现在作为 Worker 池的大小
+	csvFile := "test_5000.csv"              // 指向刚才截取的小文件
+	outputFile := "data/results_test.jsonl" // 存放到 data 目录下
+	concurrency := 50                       // 测试阶段开 50 个并发就足够快了
+	// ========================
 
-	// 使用 bufio 缓冲写入
-	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
-	if err != nil {
-		return fmt.Errorf("error opening file: %v", err)
-	}
-	defer file.Close()
+	fmt.Printf("Starting scan with %d concurrent workers...\n", concurrency)
 
-	writer := bufio.NewWriterSize(file, 64*1024)
-	for _, result := range results {
-		jsonBytes, err := json.Marshal(result)
+	fmt.Printf("Starting scan with %d concurrent workers...\n", concurrency)
+	startTime := time.Now()
+
+	// 1. 创建任务和结果的缓冲通道 (Buffer 设为并发数的 2 倍，保证流水线顺畅)
+	tasksChan := make(chan ScanTask, concurrency*2)
+	resultsChan := make(chan models.DomainResult, concurrency*2)
+
+	var workerWG sync.WaitGroup
+	var writerWG sync.WaitGroup
+
+	// ==========================================
+	// 2. 启动单一消费者：专属的磁盘写入协程
+	// 优势：完全无锁，天生线程安全，利用 bufio 极速落盘
+	// ==========================================
+	writerWG.Add(1)
+	go func() {
+		defer writerWG.Done()
+
+		file, err := os.OpenFile(outputFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 		if err != nil {
-			return fmt.Errorf("error marshaling JSON: %v", err)
+			fmt.Printf("Error opening output file: %v\n", err)
+			return
 		}
-		writer.Write(append(jsonBytes, '\n'))
-	}
-	writer.Flush() // 避免频繁 file.Sync()
-	return nil
-}
+		defer file.Close()
 
-// 逐行读取 CSV，避免一次性加载大量数据
-func fetchDomainsFromCSVStream(filename string, processFunc func(string, int)) error {
-	file, err := os.Open(filename)
-	if err != nil {
-		return fmt.Errorf("failed to open CSV file: %v", err)
+		// 保持你原本优秀的 64KB 缓冲写入设计
+		writer := bufio.NewWriterSize(file, 64*1024)
+		defer writer.Flush() // 确保退出前最后的数据被刷入磁盘
+
+		// 不断从结果通道读取数据，直到通道被关闭
+		for result := range resultsChan {
+			jsonBytes, err := json.Marshal(result)
+			if err != nil {
+				fmt.Printf("Error marshaling JSON for %s: %v\n", result.Domain, err)
+				continue
+			}
+			writer.Write(jsonBytes)
+			writer.WriteByte('\n')
+		}
+	}()
+
+	// ==========================================
+	// 3. 启动固定数量的 Worker 协程池
+	// ==========================================
+	for i := 0; i < concurrency; i++ {
+		workerWG.Add(1)
+		go func() {
+			defer workerWG.Done()
+
+			// Worker 不断从任务通道领取域名
+			for task := range tasksChan {
+				// 执行你的核心扫描逻辑
+				domainResult := ProcessDomain(task.Domain)
+				domainResult.Domain_id = task.Index + 1
+
+				// 将结果丢入通道，无需加任何锁！
+				resultsChan <- domainResult
+			}
+		}()
 	}
-	defer file.Close()
+
+	// ==========================================
+	// 4. 读取 CSV 并下发任务 (生产者)
+	// ==========================================
+	file, err := os.Open(csvFile)
+	if err != nil {
+		fmt.Printf("Failed to open CSV file: %v\n", err)
+		close(tasksChan)
+		return
+	}
 
 	reader := csv.NewReader(file)
+	// reader.FieldsPerRecord = -1 // 如果 CSV 有的行长短不一，可以解除这行注释
 	lineIndex := 0
+	count := 0
+
 	for {
 		record, err := reader.Read()
 		if err != nil {
-			break
+			break // EOF
 		}
 
 		if len(record) > 1 {
-			domain := strings.TrimSpace(record[1])
-			//domain := strings.TrimSpace(record[0]) //9.13
+			domain := strings.TrimSpace(record[1]) // 取第二列，对应你原本的逻辑
 			if domain != "" {
-				processFunc(domain, lineIndex)
+				// 将提取的域名放入任务通道
+				tasksChan <- ScanTask{Domain: domain, Index: lineIndex}
+				count++
+
+				// 简单的进度打印，防止跑起来感觉像卡死了
+				if count%1000 == 0 {
+					fmt.Printf("[Status] Pushed %d domains to queue...\n", count)
+				}
 			}
 		}
 		lineIndex++
 	}
-	return nil
-}
-func Process() {
-	var wg sync.WaitGroup
-	fileLock := &sync.Mutex{} // 用于写入 JSONL 时加锁
-	fileName := "init.jsonl"
-	//csvFile := "tranco_KJ7VW.csv"
-	//csvFile := "remaining_domains.csv" //3.19续
-	csvFile := "/home/wzq/scan-website/domains.csv"
+	file.Close()
 
-	// 控制并发的信号量，限制最大 Goroutine 数量
-	semaphore := make(chan struct{}, 200)
-	batchSize := 500
-	var currentBatch []models.DomainResult
-	var resultsMutex sync.Mutex
+	// 任务全部下发完毕，关闭任务通道，告诉 Worker 们没有新活儿了
+	close(tasksChan)
 
-	// 使用流式读取 CSV
-	err := fetchDomainsFromCSVStream(csvFile, func(domain string, index int) {
-		wg.Add(1)
-		semaphore <- struct{}{} // 占用一个信号量
+	// ==========================================
+	// 5. 优雅关闭与资源清理
+	// ==========================================
+	// 等待所有 Worker 消化完通道里剩余的任务
+	workerWG.Wait()
+	fmt.Println("All workers finished. Closing results channel...")
 
-		go func(domain string, index int) {
-			defer wg.Done()
-			defer func() { <-semaphore }() // 释放信号量
+	// Worker 全部完工后，关闭结果通道，告诉 Writer 可以收尾了
+	close(resultsChan)
 
-			// 处理域名
-			domainResult := ProcessDomain(domain)
-			domainResult.Domain_id = index + 1
+	// 等待 Writer 把最后在内存 buffer 里的数据刷入磁盘
+	writerWG.Wait()
 
-			// 批量写入 JSONL
-			resultsMutex.Lock()
-			currentBatch = append(currentBatch, domainResult)
-			if len(currentBatch) >= batchSize {
-				if err := writeResultToJSONLFile(fileName, currentBatch, fileLock); err != nil {
-					fmt.Printf("Error writing batch to JSONL: %v\n", err)
-				}
-				currentBatch = nil // 清空批次
-				freeMem()          // 释放内存，防止 OOM//3.17
-			}
-			resultsMutex.Unlock()
-		}(domain, index)
-	})
-
-	if err != nil {
-		fmt.Printf("Failed to fetch domains from CSV: %v\n", err)
-		return
-	}
-
-	// 等待所有任务完成
-	wg.Wait()
-
-	// 处理剩余的批次
-	if len(currentBatch) > 0 {
-		if err := writeResultToJSONLFile(fileName, currentBatch, fileLock); err != nil {
-			fmt.Printf("Error writing last batch to JSONL: %v\n", err)
-		}
-		freeMem() // 释放最后的内存
-	}
-
-	fmt.Printf("Results successfully saved to %s\n", fileName)
+	elapsed := time.Since(startTime)
+	fmt.Printf("Scan completed! Results successfully saved to %s in %s\n", outputFile, elapsed)
 }
