@@ -1,3 +1,5 @@
+github.com/beevik/etree v1.6.0 h1:u8Kwy8pp9D9XeITj2Z0XtA5qqZEmtJtuXZRQi+j03eE=
+github.com/beevik/etree v1.6.0/go.mod h1:bh4zJxiIr62SOf9pRzN7UUYaEDa9HEKafK25+sLc0Gc=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fullsailor/pkcs7 v0.0.0-20160414161337-2585af45975b h1:074/xhloHUBOpTZwlIzQ28rbPY8pNJvzY7Gcx5KnNOk=
 github.com/fullsailor/pkcs7 v0.0.0-20160414161337-2585af45975b/go.mod h1:KnogPXtdwXqoenmZCw6S+25EAm2MkxbG0deNDu4cbSA=

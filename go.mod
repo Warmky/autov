@@ -3,6 +3,7 @@ module autov
 go 1.25.0
 
 require (
+	github.com/beevik/etree v1.6.0 // indirect
 	github.com/fullsailor/pkcs7 v0.0.0-20160414161337-2585af45975b // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/miekg/dns v1.1.72 // indirect
