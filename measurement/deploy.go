@@ -15,6 +15,8 @@ import (
 	"github.com/beevik/etree"
 )
 
+//measurement_1,统计机制部署情况
+
 func CountDomainsWithValidConfig(inputFile string) {
 	file, err := os.Open(inputFile)
 	if err != nil {
@@ -155,15 +157,27 @@ func CountDomainsWithValidConfig(inputFile string) {
 				hasSRV = true
 				for _, record := range obj.SRV.RecvRecords {
 					service := strings.ToLower(record.Service)
-					if strings.HasPrefix(service, "_imap.") { srvTypes["IMAP"] = true }
-					if strings.HasPrefix(service, "_imaps.") { srvTypes["IMAPS"] = true }
-					if strings.HasPrefix(service, "_pop3.") { srvTypes["POP3"] = true }
-					if strings.HasPrefix(service, "_pop3s.") { srvTypes["POP3S"] = true }
+					if strings.HasPrefix(service, "_imap.") {
+						srvTypes["IMAP"] = true
+					}
+					if strings.HasPrefix(service, "_imaps.") {
+						srvTypes["IMAPS"] = true
+					}
+					if strings.HasPrefix(service, "_pop3.") {
+						srvTypes["POP3"] = true
+					}
+					if strings.HasPrefix(service, "_pop3s.") {
+						srvTypes["POP3S"] = true
+					}
 				}
 				for _, record := range obj.SRV.SendRecords {
 					service := strings.ToLower(record.Service)
-					if strings.HasPrefix(service, "_submission.") { srvTypes["SUBMISSION"] = true }
-					if strings.HasPrefix(service, "_submissions.") { srvTypes["SUBMISSIONS"] = true }
+					if strings.HasPrefix(service, "_submission.") {
+						srvTypes["SUBMISSION"] = true
+					}
+					if strings.HasPrefix(service, "_submissions.") {
+						srvTypes["SUBMISSIONS"] = true
+					}
 				}
 
 				// DNSSEC
@@ -207,10 +221,18 @@ func CountDomainsWithValidConfig(inputFile string) {
 			// Autoconfig
 			if hasAutoconfig {
 				validAutoconfigDomains[domain] = struct{}{}
-				if acMethods["directurl"] { autoconfigFromDirecturl[domain] = struct{}{} }
-				if acMethods["ISPDB"] { autoconfigFromISPDB[domain] = struct{}{} }
-				if acMethods["MX_samedomain"] { autoconfigFromMXSameDomain[domain] = struct{}{} }
-				if acMethods["MX"] { autoconfigFromMX[domain] = struct{}{} }
+				if acMethods["directurl"] {
+					autoconfigFromDirecturl[domain] = struct{}{}
+				}
+				if acMethods["ISPDB"] {
+					autoconfigFromISPDB[domain] = struct{}{}
+				}
+				if acMethods["MX_samedomain"] {
+					autoconfigFromMXSameDomain[domain] = struct{}{}
+				}
+				if acMethods["MX"] {
+					autoconfigFromMX[domain] = struct{}{}
+				}
 			}
 
 			// Autodiscover
@@ -219,23 +241,47 @@ func CountDomainsWithValidConfig(inputFile string) {
 			}
 			if hasAutodiscover {
 				validAutodiscoverDomains[domain] = struct{}{}
-				if adHasCNAME { autodiscover_cname_and_config[domain] = struct{}{} }
-				if adMethods["POST"] { autodiscoverFromPost[domain] = struct{}{} }
-				if adMethods["srv-post"] { autodiscoverFromSrvpost[domain] = struct{}{} }
-				if adMethods["get-post"] || adMethods["get_post"] { autodiscoverFromGetpost[domain] = struct{}{} }
-				if adMethods["direct_get"] { autodiscoverFromDirectGet[domain] = struct{}{} }
+				if adHasCNAME {
+					autodiscover_cname_and_config[domain] = struct{}{}
+				}
+				if adMethods["POST"] {
+					autodiscoverFromPost[domain] = struct{}{}
+				}
+				if adMethods["srv-post"] {
+					autodiscoverFromSrvpost[domain] = struct{}{}
+				}
+				if adMethods["get-post"] || adMethods["get_post"] {
+					autodiscoverFromGetpost[domain] = struct{}{}
+				}
+				if adMethods["direct_get"] {
+					autodiscoverFromDirectGet[domain] = struct{}{}
+				}
 			}
 
 			// SRV
 			if hasSRV {
 				validSRVDomains[domain] = struct{}{}
-				if srvTypes["IMAP"] { srvIMAPDomains[domain] = struct{}{} }
-				if srvTypes["IMAPS"] { srvIMAPSUDomains[domain] = struct{}{} }
-				if srvTypes["POP3"] { srvPOP3Domains[domain] = struct{}{} }
-				if srvTypes["POP3S"] { srvPOP3SDomains[domain] = struct{}{} }
-				if srvTypes["SUBMISSION"] { srvSubmissionDomains[domain] = struct{}{} }
-				if srvTypes["SUBMISSIONS"] { srvSubmissionsDomains[domain] = struct{}{} }
-				if isDNSSECPassed { srvDNSSECPassed[domain] = struct{}{} }
+				if srvTypes["IMAP"] {
+					srvIMAPDomains[domain] = struct{}{}
+				}
+				if srvTypes["IMAPS"] {
+					srvIMAPSUDomains[domain] = struct{}{}
+				}
+				if srvTypes["POP3"] {
+					srvPOP3Domains[domain] = struct{}{}
+				}
+				if srvTypes["POP3S"] {
+					srvPOP3SDomains[domain] = struct{}{}
+				}
+				if srvTypes["SUBMISSION"] {
+					srvSubmissionDomains[domain] = struct{}{}
+				}
+				if srvTypes["SUBMISSIONS"] {
+					srvSubmissionsDomains[domain] = struct{}{}
+				}
+				if isDNSSECPassed {
+					srvDNSSECPassed[domain] = struct{}{}
+				}
 			}
 
 			// Guess
@@ -244,15 +290,33 @@ func CountDomainsWithValidConfig(inputFile string) {
 			}
 
 			// 交集统计
-			if hasAutoconfig && hasAutodiscover && hasSRV { validThreeAll[domain] = struct{}{} }
-			if hasAutoconfig && hasAutodiscover { validAutodiscoverAndAutoconfig[domain] = struct{}{} }
-			if hasAutoconfig && hasSRV { validAutoconfigAndSRV[domain] = struct{}{} }
-			if hasAutodiscover && hasSRV { validAutodiscoverAndSRV[domain] = struct{}{} }
-			if hasAutoconfig && !hasAutodiscover && !hasSRV { validOnlyAutoconfig[domain] = struct{}{} }
-			if hasAutodiscover && !hasAutoconfig && !hasSRV { validOnlyAutodiscover[domain] = struct{}{} }
-			if hasSRV && !hasAutoconfig && !hasAutodiscover { validOnlySRV[domain] = struct{}{} }
-			if !hasAutoconfig && !hasAutodiscover && !hasSRV { validNone[domain] = struct{}{} }
-			if !hasGUESS && !hasAutoconfig && !hasAutodiscover && !hasSRV { validNoneFour[domain] = struct{}{} }
+			if hasAutoconfig && hasAutodiscover && hasSRV {
+				validThreeAll[domain] = struct{}{}
+			}
+			if hasAutoconfig && hasAutodiscover {
+				validAutodiscoverAndAutoconfig[domain] = struct{}{}
+			}
+			if hasAutoconfig && hasSRV {
+				validAutoconfigAndSRV[domain] = struct{}{}
+			}
+			if hasAutodiscover && hasSRV {
+				validAutodiscoverAndSRV[domain] = struct{}{}
+			}
+			if hasAutoconfig && !hasAutodiscover && !hasSRV {
+				validOnlyAutoconfig[domain] = struct{}{}
+			}
+			if hasAutodiscover && !hasAutoconfig && !hasSRV {
+				validOnlyAutodiscover[domain] = struct{}{}
+			}
+			if hasSRV && !hasAutoconfig && !hasAutodiscover {
+				validOnlySRV[domain] = struct{}{}
+			}
+			if !hasAutoconfig && !hasAutodiscover && !hasSRV {
+				validNone[domain] = struct{}{}
+			}
+			if !hasGUESS && !hasAutoconfig && !hasAutodiscover && !hasSRV {
+				validNoneFour[domain] = struct{}{}
+			}
 
 			mu.Unlock()
 		}(obj)

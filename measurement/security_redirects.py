@@ -1,7 +1,7 @@
 import json
 import tldextract
 from urllib.parse import urlparse
-
+#重定向安全分析脚本01
 def analyze_redirect_security(input_file, output_file):
     print(f"🔍 正在深度解析重定向安全漏洞: {input_file} ...")
     
