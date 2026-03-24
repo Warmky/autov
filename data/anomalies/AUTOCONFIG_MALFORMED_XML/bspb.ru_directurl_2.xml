@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Resource>/bspb-distr/well-known/autoconfig/mail/config-v1.1.xml?emailaddress=info@bspb.ru</Resource><RequestId>6fabc7e98f383df0</RequestId></Error>

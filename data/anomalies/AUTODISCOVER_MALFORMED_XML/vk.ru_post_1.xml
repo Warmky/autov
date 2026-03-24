@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<Autodiscover xmlns="http://schemas.microsoft.com/exchange/autodiscover/responseschema/2006">
+<Response xmlns="http://schemas.microsoft.com/exchange/autodiscover/outlook/responseschema/2006a">
+<Account>
+<AccountType>email</AccountType>
+<Action>settings</Action>
+
+<Protocol>
+<Type>IMAP</Type>
+<Server>imap.vk.com</Server>
+<LoginName>info@vk.ru</LoginName>
+<Port>993</Port>
+<SPA>off</SPA>
+<SSL>on</SSL>
+<AuthRequired>on</AuthRequired>
+<DomainRequired>off</DomainRequired>
+</Protocol>
+
+<Protocol>
+<Type>POP3</Type>
+<Server>pop.vk.com</Server>
+<Port>995</Port>
+<LoginName>info@vk.ru</LoginName>
+<AuthRequired>on</AuthRequired>
+<DomainRequired>off</DomainRequired>
+<SPA>off</SPA>
+<SSL>on</SSL>
+</Protocol>
+
+<Protocol>
+<Type>SMTP</Type>
+<Server>smtp.vk.com</Server>
+<Port>465</Port>
+<LoginName>info@vk.ru</LoginName>
+<AuthRequired>on</AuthRequired>
+<DomainRequired>off</DomainRequired>
+<SPA>off</SPA>
+<SSL>on</SSL>
+
+</Protocol>
+
+</Account>
+</Response>
+</Autodiscover>

@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+
+    <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="icon" href="https://www.iv.lt/fav.ico" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://www.iv.lt/favicon-32x32.png" sizes="32x32">
+    <style type="text/css">
+        a#CybotCookiebotDialogPoweredbyCybot,
+        div#CybotCookiebotDialogPoweredByText {
+            display: none;
+        }
+
+        #CookiebotWidget .CookiebotWidget-body .CookiebotWidget-main-logo {
+            display: none;
+        }
+    </style>
+
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("consent", "default", {
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            functionality_storage: "granted",
+            personalization_storage: "granted",
+            security_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted",
+            wait_for_update: 2000,
+        });
+        gtag("set", "ads_data_redaction", true);
+    </script>
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="838adaa9-2e3b-4abe-b256-0d9cad1fd025"
+            data-blockingmode="auto" type="text/javascript"></script>
+
+    <script data-cookieconsent="ignore" src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://stape.iv.lt/bslnuukd.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5N6KHRT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WZV9VVG8');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="lt" href="https://www.iv.lt/serveriai/" />
+<link rel="alternate" hreflang="x-default" href="https://www.iv.lt/serveriai/" />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v26.6 (Yoast SEO v26.6) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Interneto vizija</title>
+	<meta name="description" content="Serveriai.lt paslaugos persikėlė į Interneto viziją Serveriai.lt buvo vienas iš UAB „Interneto vizija“ projektų, skirtas paprastiems ir neribotiems" />
+	<link rel="canonical" href="https://www.iv.lt/serveriai/" />
+	<meta property="og:locale" content="lt_LT" />
+	<meta property="og:type" content="article" />
+	<meta property="og:description" content="Serveriai.lt paslaugos persikėlė į Interneto viziją Serveriai.lt buvo vienas iš UAB „Interneto vizija“ projektų, skirtas paprastiems ir neribotiems" />
+	<meta property="og:url" content="https://www.iv.lt/serveriai/" />
+	<meta property="og:site_name" content="Interneto vizija" />
+	<meta property="article:publisher" content="https://www.facebook.com/internetovizija" />
+	<meta property="article:modified_time" content="2026-02-04T07:32:31+00:00" />
+	<meta property="og:image" content="https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg" />
+	<meta property="og:image:width" content="2154" />
+	<meta property="og:image:height" content="1042" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="3 minutės" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.iv.lt/serveriai/","url":"https://www.iv.lt/serveriai/","name":"- Interneto vizija","isPartOf":{"@id":"https://www.iv.lt/#website"},"primaryImageOfPage":{"@id":"https://www.iv.lt/serveriai/#primaryimage"},"image":{"@id":"https://www.iv.lt/serveriai/#primaryimage"},"thumbnailUrl":"https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg","datePublished":"2026-02-04T07:32:20+00:00","dateModified":"2026-02-04T07:32:31+00:00","description":"Serveriai.lt paslaugos persikėlė į Interneto viziją Serveriai.lt buvo vienas iš UAB „Interneto vizija“ projektų, skirtas paprastiems ir neribotiems","inLanguage":"lt-LT","potentialAction":[{"@type":"ReadAction","target":["https://www.iv.lt/serveriai/"]}]},{"@type":"ImageObject","inLanguage":"lt-LT","@id":"https://www.iv.lt/serveriai/#primaryimage","url":"https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg","contentUrl":"https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg","width":2154,"height":1042},{"@type":"WebSite","@id":"https://www.iv.lt/#website","url":"https://www.iv.lt/","name":"Interneto vizija","description":"Visos interneto svetainių talpinimo paslaugos","publisher":{"@id":"https://www.iv.lt/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.iv.lt/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"lt-LT"},{"@type":"Organization","@id":"https://www.iv.lt/#organization","name":"UAB \"Interneto vizija\"","url":"https://www.iv.lt/","logo":{"@type":"ImageObject","inLanguage":"lt-LT","@id":"https://www.iv.lt/#/schema/logo/image/","url":"https://www.iv.lt/wp-content/uploads/2019/12/logo.png","contentUrl":"https://www.iv.lt/wp-content/uploads/2019/12/logo.png","width":600,"height":600,"caption":"UAB \"Interneto vizija\""},"image":{"@id":"https://www.iv.lt/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/internetovizija","https://www.instagram.com/internetovizija/","https://www.linkedin.com/company/uab-interneto-vizija-/about/","https://www.youtube.com/channel/UCKP-ZDA1w5oWDDiSV0ZxqbQ"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.iv.lt/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-heading-inline-css' type='text/css'>
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://www.iv.lt/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id='wp-block-image-inline-css' type='text/css'>
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://www.iv.lt/wp-includes/blocks/image/style.min.css */
+</style>
+<style id='wp-block-list-inline-css' type='text/css'>
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://www.iv.lt/wp-includes/blocks/list/style.min.css */
+</style>
+<style id='wp-block-media-text-inline-css' type='text/css'>
+.wp-block-media-text{box-sizing:border-box;
+  /*!rtl:begin:ignore*/direction:ltr;
+  /*!rtl:end:ignore*/display:grid;grid-template-columns:50% 1fr;grid-template-rows:auto}.wp-block-media-text.has-media-on-the-right{grid-template-columns:1fr 50%}.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__media{align-self:start}.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__media,.wp-block-media-text>.wp-block-media-text__content,.wp-block-media-text>.wp-block-media-text__media{align-self:center}.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__media{align-self:end}.wp-block-media-text>.wp-block-media-text__media{
+  /*!rtl:begin:ignore*/grid-column:1;grid-row:1;
+  /*!rtl:end:ignore*/margin:0}.wp-block-media-text>.wp-block-media-text__content{direction:ltr;
+  /*!rtl:begin:ignore*/grid-column:2;grid-row:1;
+  /*!rtl:end:ignore*/padding:0 8%;word-break:break-word}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__media{
+  /*!rtl:begin:ignore*/grid-column:2;grid-row:1
+  /*!rtl:end:ignore*/}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__content{
+  /*!rtl:begin:ignore*/grid-column:1;grid-row:1
+  /*!rtl:end:ignore*/}.wp-block-media-text__media a{display:block}.wp-block-media-text__media img,.wp-block-media-text__media video{height:auto;max-width:unset;vertical-align:middle;width:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media{background-size:cover;height:100%;min-height:250px}.wp-block-media-text.is-image-fill>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media img{height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;clip:rect(0,0,0,0);border:0}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media{height:100%;min-height:250px}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media img{height:100%;object-fit:cover;width:100%}@media (max-width:600px){.wp-block-media-text.is-stacked-on-mobile{grid-template-columns:100%!important}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media{grid-column:1;grid-row:1}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__content{grid-column:1;grid-row:2}}
+/*# sourceURL=https://www.iv.lt/wp-includes/blocks/media-text/style.min.css */
+</style>
+<style id='wp-block-paragraph-inline-css' type='text/css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.iv.lt/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--green: #00a372;--wp--preset--color--blue: #266bbd;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--regular: 16px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id='core-block-supports-inline-css' type='text/css'>
+.wp-elements-3df65509949893e818c6340b0615712b a:where(:not(.wp-element-button)){color:var(--wp--preset--color--green);}.wp-elements-4a24ea829b9d5083e1bb4cf7dfbbe5e3 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--green);}.wp-elements-12978816a2b920762e1edd8dbafbb728 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--green);}.wp-elements-60cf011d25c7d8de50c99e7a6c54eaea a:where(:not(.wp-element-button)){color:var(--wp--preset--color--green);}.wp-elements-5180beb28c1c2bb47893ee4712495e09 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--green);}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='custom-header-info-css-css' href='https://www.iv.lt/wp-content/plugins/custom-header-info/css/custom-header-info.css' type='text/css' media='all' />
+<link rel='stylesheet' id='eyeonid-check-css' href='https://www.iv.lt/wp-content/plugins/eyeonid-check/public/css/eyeonid-check-public.css' type='text/css' media='all' />
+<link rel='stylesheet' id='digi-main-css' href='https://www.iv.lt/wp-content/themes/digiTheme/assets/main.css' type='text/css' media='all' />
+<link rel='stylesheet' id='digi-styles-new-css' href='https://www.iv.lt/wp-content/themes/digiTheme/assets/style-v2-min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='digi-fancybox-css' href='https://www.iv.lt/wp-content/themes/digiTheme/assets/jquery.fancybox.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='digi-edit-css' href='https://www.iv.lt/wp-content/themes/digiTheme/assets/main-edit.css' type='text/css' media='all' />
+<script type="text/javascript" src="https://www.iv.lt/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/plugins/eyeonid-check/public/js/eyeonid-check-public.js" id="eyeonid-check-js"></script>
+<meta name="generator" content="WPML ver:4.8.6 stt:1,32;" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "SiteNavigationElement", "name": "Domenų registravimas",  "url": "https://www.iv.lt/domenai/",            "isPartOf": { "@id": "https://www.iv.lt/#website" } },
+    { "@type": "SiteNavigationElement", "name": "Svetainių talpinimas",  "url": "https://www.iv.lt/talpinimo-planai/",   "isPartOf": { "@id": "https://www.iv.lt/#website" } },
+    { "@type": "SiteNavigationElement", "name": "SSL sertifikatai",      "url": "https://www.iv.lt/sertifikatai/",       "isPartOf": { "@id": "https://www.iv.lt/#website" } },
+    { "@type": "SiteNavigationElement", "name": "VPS serveriai",         "url": "https://www.iv.lt/vps-serveriai/",      "isPartOf": { "@id": "https://www.iv.lt/#website" } },
+    { "@type": "SiteNavigationElement", "name": "Prohostingas",           "url": "https://www.iv.lt/profesionalus-hostingas/",         "isPartOf": { "@id": "https://www.iv.lt/#website" } }
+  ]
+}
+</script><div id="custom-header-info-container">    <div class="chi-wrap" data-source="chi"
+         data-tz="+02:00"
+         data-monfri="08:00-19:00"
+         data-satsun="10:00-19:00">
+        <div style="background-color:#ECF0F1;border:1px solid #C7D2D6;">
+            <div class="container header-top-info mx-auto">
+                <div class="header-top-items">
+                    <a class="header-top-a" href="https://www.iv.lt/kontaktai">Kontaktai</a>
+
+                    <div class="header-top-div">
+                        <img src="https://www.iv.lt/wp-content/plugins/custom-header-info/images/header_icon_mail.svg" style="padding-bottom:3px;" alt="mail">
+                        <a class="header-top-a" href="mailto:info@iv.lt">info@iv.lt</a>
+                    </div>
+
+                    <div class="header-top-div">
+                        <img src="https://www.iv.lt/wp-content/plugins/custom-header-info/images/header_icon_mobile.svg" style="padding-bottom:3px;" alt="phone">
+                        <a class="header-top-a" id="tel-number-a-tag" href="tel:+370 (5) 232 4444">+370 (5) 232 4444</a>
+                    </div>
+
+                    <div class="header-top-div header-top-div-time">
+                        <!-- 1) DOT container (keeps exact wrapper div for styling) -->
+                        <div id="chi-dot-container"></div>
+
+                        <!-- 2) STATUS + tooltip container (keeps exact structure) -->
+                        <div>
+                            <div id="chi-status" style="color:#262626;" class="hover-hours p-tag chi-status">
+                                <!-- left intentionally empty; filled by inline script synchronously -->
+                            </div>
+
+                            <div class="working-hours-tooltip">
+                                <div style="display:flex;gap:10px;align-items:center;">
+                                    <div><img src="https://www.iv.lt/wp-content/plugins/custom-header-info/images/header_icon_wh.svg" alt="clock icon"></div>
+                                    <div style="display:flex;flex-direction:column;">
+                                                                                    <div class="working-hours-tooltip-div">
+                                                <div class="working-hours-tooltip-items">
+                                                    <div style="font-weight:bold;">Pir–Pen</div>
+                                                    <div>08:00-19:00</div>
+                                                </div>
+                                                <div style="margin-bottom:8px;" class="working-hours-tooltip-item-exception">
+                                                                                                    </div>
+                                            </div>
+                                                                                    <div class="working-hours-tooltip-div">
+                                                <div class="working-hours-tooltip-items">
+                                                    <div style="font-weight:bold;">Šeš–Sek</div>
+                                                    <div>10:00-19:00</div>
+                                                </div>
+                                                <div style="" class="working-hours-tooltip-item-exception">
+                                                    Nuo 13:00 iki 14:00 pertrauka                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                (function(){
+                                    try{
+                                        var root   = document.currentScript.closest('.header-top-div-time');
+                                        var dotBox = root.querySelector('#chi-dot-container');
+                                        var status = root.querySelector('#chi-status');
+
+                                        var tz      = "+02:00";
+                                        var monfri  = "08:00-19:00";
+                                        var satsun  = "10:00-19:00";
+                                        var i18n = {"open":"Dirbame!","opening_in":"Dirbsime po %s","hour_one":"valandos","hour_other":"valand\u0173","min_one":"minut\u0117s","min_other":"minu\u010di\u0173","and":"ir"};
+                                        var green   = "https:\/\/www.iv.lt\/wp-content\/plugins\/custom-header-info\/images\/header_ellipse_green.svg";
+                                        var red     = "https:\/\/www.iv.lt\/wp-content\/plugins\/custom-header-info\/images\/header_ellipse_red.svg";
+
+                                        function parseHHMM(s){ if(!s||s.indexOf(':')===-1)return null; var p=s.split(':'), h=+p[0], m=+p[1]; return (isNaN(h)||isNaN(m))?null:h*60+m; }
+                                        function partsInTZ(){
+                                            var prts=new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:tz}).formatToParts(new Date()),
+                                                o={}; for(var i=0;i<prts.length;i++) o[prts[i].type]=prts[i].value;
+                                            return {y:+o.year,m:(+o.month)-1,d:+o.day,hh:+o.hour,mm:+o.minute,ss:+o.second, ms:0};
+                                        }
+                                        function weekdayInTZ(){ return new Intl.DateTimeFormat('en-GB',{weekday:'long',timeZone:tz}).format(new Date()).toLowerCase(); }
+                                        function nowMinInTZ(){
+                                            var f=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz}).format(new Date()).split(':');
+                                            return (+f[0])*60+(+f[1]);
+                                        }
+                                        function minutesUntil(nextHHMM){
+                                            var P=partsInTZ(), nowUTC=new Date(Date.UTC(P.y,P.m,P.d,P.hh,P.mm,P.ss));
+                                            var hh=+nextHHMM.split(':')[0], mm=+nextHHMM.split(':')[1];
+                                            var tgt=new Date(Date.UTC(P.y,P.m,P.d,hh,mm,0)), diff=tgt-nowUTC;
+                                            if(diff<0) diff=new Date(Date.UTC(P.y,P.m,P.d+1,hh,mm,0))-nowUTC;
+                                            var mins=Math.max(0,Math.round(diff/60000));
+                                            return {h:Math.floor(mins/60), m:mins%60};
+                                        }
+
+                                        // Determine today's hours bundle from your rendered tooltip data attributes
+                                        function todayBundle(){
+                                            var day = weekdayInTZ();
+                                            var wd  = ['monday','tuesday','wednesday','thursday','friday'];
+                                            return (wd.indexOf(day)>-1 ? monfri : satsun) || '';
+                                        }
+
+                                        // Create (once) the dot <img> so we can flip its src later
+                                        var img = document.createElement('img');
+                                        img.className = 'chi-dot';
+                                        dotBox.appendChild(img);
+
+                                        // Core render that we can call now and every minute
+                                        function recalcAndRender(){
+                                            var bundle = todayBundle();
+                                            if(!bundle || bundle.indexOf('-')===-1) return;
+                                            var openHHMM  = (bundle.split('-')[0]||'').trim();
+                                            var closeHHMM = (bundle.split('-')[1]||'').trim();
+
+                                            var now=nowMinInTZ(), o=parseHHMM(openHHMM), c=parseHHMM(closeHHMM);
+                                            if(now==null||o==null||c==null) return;
+
+                                            var isOpen = (now>=o && now<=c);
+
+                                            if (isOpen) {
+                                                status.textContent = i18n.open;
+                                                if (img.src.indexOf('header_ellipse_green.svg')===-1) img.src = green;
+                                                img.alt = "green dot";
+                                            } else {
+                                                var wait = minutesUntil(openHHMM);
+
+                                                function unit(n, one, other){ return (n === 1) ? one : other; }
+
+                                                var parts = [];
+                                                if (wait.h > 0) parts.push(wait.h + ' ' + unit(wait.h, i18n.hour_one, i18n.hour_other));
+                                                if (wait.m > 0 || parts.length === 0) parts.push(wait.m + ' ' + unit(wait.m, i18n.min_one, i18n.min_other));
+
+                                                var hm = parts.join(' ');
+                                                status.textContent = i18n.opening_in.replace(/%(\d+\$)?s/g, hm);
+
+                                                status.textContent = i18n.opening_in.replace(/%(\d+\$)?s/g, hm);
+                                                if (img.src.indexOf('header_ellipse_red.svg')===-1) img.src = red;
+                                                img.alt = "red dot";
+                                            }
+                                        }
+
+                                        recalcAndRender();
+
+                                        (function schedule(){
+                                            var P = partsInTZ();
+                                            var msToNext = (60 - P.ss) * 1000;
+                                            setTimeout(function tick(){
+                                                recalcAndRender();
+                                                setTimeout(tick, 60000); // every minute
+                                            }, Math.max(200, msToNext));
+                                        })();
+                                    }catch(e){}
+                                })();
+                            </script>
+                        </div>
+
+                        <div><img src="https://www.iv.lt/wp-content/plugins/custom-header-info/images/header_info_sign.svg" alt="info icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>		<style type="text/css" id="wp-custom-css">
+			body.page-id-15223 img[src*="search_icon.svg"] {
+    display: none !important;
+}
+body.page-id-15503 img[src*="search_icon.svg"] {
+    display: none !important;
+}
+		</style>
+		
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-951088218"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'AW-951088218');
+    </script>
+
+    <!-- Hotjar Tracking Code for IV  -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {hjid: 5149659, hjsv: 6};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <script>
+        (function () {
+            const SITE_KEY = "6LcpX0ksAAAAAMGG9Typ4Y7x1bMb747hoAVap-T5";
+
+            const path = window.location.pathname || "/";
+
+            // const isHome = path === "/" || path === "" || path === "/index.php";
+            // const isTld  = /^\/tld(\/.*)?$/.test(path);  // ✅ includes /tld and /tld/ and /tld/*
+            //
+            // if (!(isHome || isTld)) return;
+
+            if (window.__rcLoaded) return;
+            window.__rcLoaded = true;
+
+            const s = document.createElement("script");
+            s.src = "https://www.google.com/recaptcha/api.js?render=" + encodeURIComponent(SITE_KEY);
+            s.async = true;
+            s.defer = true;
+            document.head.appendChild(s);
+
+            document.addEventListener("DOMContentLoaded", () => {
+                let tries = 0;
+                const maxTries = 50; // ~5 seconds
+                const timer = setInterval(() => {
+                    tries++;
+                    const b = document.querySelector(".grecaptcha-badge");
+                    if (b) {
+                        b.style.visibility = "visible";
+                        clearInterval(timer);
+                    }
+                    if (tries >= maxTries) clearInterval(timer);
+                }, 100);
+            });
+        })();
+    </script>
+
+</head>
+    
+<body class="wp-singular page-template-default page-id-19121 wp-theme-digiTheme">
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://stape.iv.lt/ns.html?id=GTM-5N6KHRT"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZV9VVG8 "
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="overlay"></div>
+
+    <div class="bg-white relative z-1002">
+    <div class="custom-header mx-auto header">
+
+        <div class="flex-1.max-w-260px flex items-center justify-between">
+            <a class="block max-w-122px lg:max-w-full logo" href="https://www.iv.lt"><img style="width: 190px;"
+                                                                                       src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/logo.svg"
+                                                                                       alt="Interneto vizija"/></a>
+                        <div class="block lg:hidden flex items-center">
+                <div class="relative mr-2 languages"><a class="current-language" href="javascript:"
+                                                        id="current_language">LT<img class="ml-1"
+                                                                                                          src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/arrow_down.svg"
+                                                                                                          alt="down"/></a>
+                                            <ul class="language-submenu">
+                                                            <li><a class="language-submenu-item" href="https://www.iv.lt/en/">EN</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                <a class="mobile-menu-toggler" href="javascript:" id="mobile_menu_toggler">
+                    <img class="menu-open" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/mobile_menu_toggler.svg" alt="Mobile menu"/>
+                    <img class="menu-close" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/cross.svg" alt="Close mobile menu"/>
+                </a>
+                <div class="header-mobile-menu-outer">
+                                            <ul class="header-bottom-menu-mobile">
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-327">
+                                    <a                                        href="https://www.iv.lt/domenai/">Domenai</a>
+                                                                    </li>
+                                                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-25 menu-item-has-children">
+                                    <a                                        href="#">Svetainės ir el. paštas</a>
+                                                                            <ul class="sub-menu">
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/wordpress-hostingas/">WordPress hostingas</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/talpinimo-planai/">Svetainių talpinimas ir el. paštas</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/profesionalus-hostingas/">Prohostingo paslaugos</a>
+                                                </li>
+                                                                                    </ul>
+                                                                    </li>
+                                                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9944 menu-item-has-children">
+                                    <a                                        href="#">Svetainės kūrimas</a>
+                                                                            <ul class="sub-menu">
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/ismanus-ai-svetaines-kurimo-vedlys/">Išmanus AI svetainės kūrimo vedlys</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/svetaines-kurimo-irankis/">Svetainės kūrimo įrankis</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/seo-irankis/">SEO įrankis</a>
+                                                </li>
+                                                                                    </ul>
+                                                                    </li>
+                                                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9945 menu-item-has-children">
+                                    <a                                        href="#">Saugumas</a>
+                                                                            <ul class="sub-menu">
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/sertifikatai/">SSL sertifikatai</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/vpn/">VPN paslauga</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/svetaines-saugumo-irankis/">Svetainės saugumo įrankis</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/el-pasto-filtras/">Profesionalus el. pašto filtras</a>
+                                                </li>
+                                                                                            <li class="menu-item">
+                                                    <a                                                        href="https://www.iv.lt/tapatybes-apsauga-internete/">Tapatybės apsauga internete</a>
+                                                </li>
+                                                                                    </ul>
+                                                                    </li>
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1341">
+                                    <a                                        href="https://www.iv.lt/vps-serveriai/">VPS serveriai</a>
+                                                                    </li>
+                                                    </ul>
+                                                                <ul class="header-top-menu-mobile">
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-318">
+                                    <a                                        href="https://www.iv.lt/apie-mus/">Apie mus                                    </a>
+                                </li>
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-743">
+                                    <a                                        href="https://www.iv.lt/blogas/">BLOGas                                    </a>
+                                </li>
+                                                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-10088">
+                                    <a                                        href="https://www.iv.lt/karjera/">Karjera                                    </a>
+                                </li>
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-9943">
+                                    <a                                        href="https://www.iv.lt/partneriu-programa/">Partnerių programa                                    </a>
+                                </li>
+                                                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-320">
+                                    <a                                        href="https://www.iv.lt/kontaktai/">Kontaktai                                    </a>
+                                </li>
+                                                    </ul>
+                                    </div>
+            </div>
+        </div>
+
+        <div class="custom-style-header flex w-full lg:w-auto">
+                            <div class="hidden lg:block">
+                    <ul class="header-bottom-menu">
+                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-327">
+                                <a                                    href="https://www.iv.lt/domenai/">Domenai</a>
+                                                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-25 menu-item-has-children">
+                                <a                                    href="#">Svetainės ir el. paštas</a>
+                                                                    <ul class="sub-menu">
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/wordpress-hostingas/">WordPress hostingas</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/talpinimo-planai/">Svetainių talpinimas ir el. paštas</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/profesionalus-hostingas/">Prohostingo paslaugos</a>
+                                            </li>
+                                                                            </ul>
+                                                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9944 menu-item-has-children">
+                                <a                                    href="#">Svetainės kūrimas</a>
+                                                                    <ul class="sub-menu">
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/ismanus-ai-svetaines-kurimo-vedlys/">Išmanus AI svetainės kūrimo vedlys</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/svetaines-kurimo-irankis/">Svetainės kūrimo įrankis</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/seo-irankis/">SEO įrankis</a>
+                                            </li>
+                                                                            </ul>
+                                                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9945 menu-item-has-children">
+                                <a                                    href="#">Saugumas</a>
+                                                                    <ul class="sub-menu">
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/sertifikatai/">SSL sertifikatai</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/vpn/">VPN paslauga</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/svetaines-saugumo-irankis/">Svetainės saugumo įrankis</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/el-pasto-filtras/">Profesionalus el. pašto filtras</a>
+                                            </li>
+                                                                                    <li class="menu-item">
+                                                <a                                                    href="https://www.iv.lt/tapatybes-apsauga-internete/">Tapatybės apsauga internete</a>
+                                            </li>
+                                                                            </ul>
+                                                            </li>
+                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1341">
+                                <a                                    href="https://www.iv.lt/vps-serveriai/">VPS serveriai</a>
+                                                            </li>
+                                            </ul>
+                </div>
+            
+            <div class="flex justify-end items-center w-full lg:w-auto">
+                <div class="lg:ml-8 flex items-start w-full lg:w-auto mt-2 lg:mt-0 lg:border-0">
+                                                                        <a class="klientams-cta bg-blue button-default--blue"
+                               href="https://klientams.iv.lt/"
+                               >Klientų sistema</a>
+                                                    <a class="klientams-cta bg-green button-default--green"
+                               href="https://pagalba.iv.lt/"
+                               >Wiki</a>
+                                                    <a class="klientams-cta bg-yellow button-default--yellow"
+                               href="https://pastas.serveriai.lt/"
+                               >Web Mail</a>
+                                                                <div class="relative hidden lg:block languages"><a class="current-language"
+                                                                       href="/">LT<img class="ml-1"
+                                                                                                            src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/arrow_down.svg"
+                                                                                                            alt="down"/></a>
+                                                    <ul class="language-submenu">
+                                                                    <li><a class="language-submenu-item" href="https://www.iv.lt/en/">EN</a>
+                                    </li>
+                                                            </ul>
+                                            </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-blue bg-blue--bar">
+    <div class="container mx-auto pt-4 pb-4 flex flex-wrap flex-col lg:flex-row pl-14px lg:pl-0 pr-14px lg:pr-0">
+        <div class="flex-1 flex items-center">
+            <div class="relative w-full max-w-606px mr-3px">
+                <form id="domain_check" accept-charset="windows-1257" action="https://paslaugos.iv.lt/tikrinti.php"
+                      method="get"><img class="absolute pin-t pin-l ml-4 mt-11px"
+                                        src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/search_icon.svg" alt="Ieškoti"/>
+                    <input class="w-full h-38px rounded pl-12 text-sm text-gray-5 font-light border border-gray-4"
+                           type="text" placeholder="Ieškoti domeno" name="domenas" required
+                           title="Įveskite vieną arba kelis tikrinamus domenus"/>
+
+                    <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+                    <input type="hidden" name="recaptcha_action" id="recaptcha_action" value="domain_check">
+                </form>
+            </div>
+            <button form="domain_check"
+                    class="bg-green text-white text-sm w-120px h-38px rounded font-normal tracking-wide button-default--green"
+                    type="submit">Tikrinti</button>
+        </div>
+
+                    <div class="flex-1 flex items-center justify-center md:justify-end">
+                <ul class="domains-with-prices">
+                                            <li><a                                href="https://www.iv.lt/tld/?lt">.lt 7.49 € </a></li>
+                                            <li><a                                href="https://www.iv.lt/tld/?eu">.eu 4.99 €</a></li>
+                                            <li><a                                href="https://www.iv.lt/tld/?com">.com 8.99 € </a></li>
+                                            <li><a                                href="https://www.iv.lt/tld/?org">.org 7.49 €</a></li>
+                                    </ul>
+            </div>
+        
+    </div>
+</div>
+
+<script>
+    (function () {
+        // install only once (prevents duplicates if header is included multiple times)
+        if (window.__recaptchaSubmitInstalled) return;
+        window.__recaptchaSubmitInstalled = true;
+
+        const SITE_KEY = "6LcpX0ksAAAAAMGG9Typ4Y7x1bMb747hoAVap-T5";
+        const ACTION   = "domain_check";
+
+        function getRecaptchaApi() {
+            const g = window.grecaptcha;
+            if (!g) return null;
+            // If enterprise.js is used:
+            if (g.enterprise && typeof g.enterprise.execute === "function") return g.enterprise;
+            // Standard v3:
+            if (typeof g.execute === "function") return g;
+            return null;
+        }
+
+        async function getToken() {
+            const api = getRecaptchaApi();
+            if (!api) throw new Error("grecaptcha not loaded (blocked or wrong script)");
+
+            // Some variants have ready(); standard v3 has it.
+            if (typeof api.ready === "function") {
+                await new Promise(res => api.ready(res));
+            }
+            return api.execute(SITE_KEY, { action: ACTION });
+        }
+
+        document.addEventListener("submit", async (e) => {
+            const form = e.target;
+            if (!(form instanceof HTMLFormElement)) return;
+
+            // Match action reliably (handles /pirkti_test.php, pirkti_test.php, absolute URLs)
+            const actionAttr = (form.getAttribute("action") || "").trim();
+            const actionAbs  = (form.action || "");
+            const isPirkti = actionAttr.endsWith("tikrinti_test.php") || actionAbs.endsWith("/tikrinti_test.php") || actionAttr.endsWith("tikrinti.php") || actionAbs.endsWith("/tikrinti.php");
+            if (!isPirkti) return;
+
+            // If we already injected a token for this submit, allow normal submit
+            if (form.dataset.recaptchaDone === "1") return;
+
+            // Prevent multiple parallel handlers
+            if (form.dataset.recaptchaBusy === "1") {
+                e.preventDefault();
+                return;
+            }
+            form.dataset.recaptchaBusy = "1";
+
+            // Stop submit until token is injected
+            e.preventDefault();
+
+            try {
+                const token = await getToken();
+
+                // Ensure hidden inputs exist
+                let tok = form.querySelector('input[name="recaptcha_token"]');
+                console.log(tok);
+                if (!tok) {
+                    tok = document.createElement("input");
+                    tok.type = "hidden";
+                    tok.name = "recaptcha_token";
+                    form.appendChild(tok);
+                }
+
+                let act = form.querySelector('input[name="recaptcha_action"]');
+                console.log(act);
+                if (!act) {
+                    act = document.createElement("input");
+                    act.type = "hidden";
+                    act.name = "recaptcha_action";
+                    form.appendChild(act);
+                }
+
+                tok.value = token;
+                act.value = ACTION;
+
+                // Mark as done so resubmit doesn't loop
+                form.dataset.recaptchaDone = "1";
+
+                // Preserve the original submitter (important for formnovalidate buttons)
+                const submitter = e.submitter instanceof HTMLElement ? e.submitter : null;
+
+                // Resubmit normally
+                if (submitter && typeof form.requestSubmit === "function") {
+                    form.requestSubmit(submitter);
+                } else if (typeof form.requestSubmit === "function") {
+                    form.requestSubmit();
+                } else {
+                    // Old browsers fallback (won't fire submit event, but we already injected token)
+                    form.submit();
+                }
+            } catch (err) {
+                console.error("reCAPTCHA failed:", err);
+                form.dataset.recaptchaBusy = "0";
+                // optional: show message
+                // alert("reCAPTCHA error. Please disable blockers and try again.");
+            }
+        }, true);
+    })();
+</script>
+
+
+	<div class="bg-white pt-4 pb-8 page">
+
+                    <div class="container mx-auto mb-4">
+    <ul class="breadcrumbs">
+
+        <li class="breadcrumbs-item"><a href="https://www.iv.lt">Pagrindinis</a></li>
+
+        
+        
+    </ul>
+</div>        
+		<div class="container max-w-836px mx-auto">
+			<h1 class="uppercase text-center mt-8 lg:mt-0 mb-8"></h1>
+			<div class="leading-normal">
+                <div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="2154" height="1042" src="https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg" alt="" class="wp-image-19152" style="aspect-ratio:2.06721044045677;width:360px;height:auto" srcset="https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB.jpg 2154w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-768x372.jpg 768w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-1536x743.jpg 1536w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-2048x991.jpg 2048w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-300x145.jpg 300w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-420x203.jpg 420w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-160x77.jpg 160w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-900x435.jpg 900w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-1240x600.jpg 1240w, https://www.iv.lt/wp-content/uploads/2026/02/serveriai.lt_RGB-620x300.jpg 620w" sizes="auto, (max-width: 2154px) 100vw, 2154px" /></figure>
+</div>
+
+
+<div style="height:30px;"></div>
+
+
+
+<h2 class="wp-block-heading has-text-align-center" id="h-serveriai-lt-paslaugos-persikele-i-interneto-vizija"><strong>Serveriai.lt paslaugos persikėlė į Interneto viziją</strong></h2>
+
+
+
+<p class="has-text-align-center" style="font-size:19px">Serveriai.lt buvo vienas iš UAB „Interneto vizija“ projektų, skirtas paprastiems ir neribotiems svetainių talpinimo planams.</p>
+
+
+
+<p class="has-text-align-center" style="font-size:19px">Per laiką išaugome &#8211; išplėtėme paslaugas, planus ir sprendimus skirtingiems poreikiams.<br>Šiandien visas serveriai.lt paslaugas rasite pagrindinėje Interneto vizijos svetainėje, tik aiškiau suskirstytas pagal tai, ko iš tikrųjų reikia jūsų svetainei.</p>
+
+
+
+<p class="has-text-align-center" style="font-size:19px">Žemiau pasirinkite, kas jums aktualiausia.</p>
+
+
+
+<div style="height:30px;"></div>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="135" height="135" src="https://www.iv.lt/wp-content/uploads/2026/02/Svetainiu_talpinimas.svg" alt="" class="wp-image-19123 size-full"/></figure><div class="wp-block-media-text__content">
+<p></p>
+
+
+
+<p style="font-size:25px"><strong>WordPress hostingas</strong></p>
+
+
+
+<p style="font-size:19px">Tinka jeigu kuriate WordPress svetainę, el. parduotuvę ar tinklaraštį ir norite, kad viskas veiktų greitai be papildomų konfigūracijų.</p>
+
+
+
+<p style="font-size:19px">Optimizuota būtent WordPress sistemai, paruošta naudoti iš karto.</p>
+
+
+
+<p class="has-green-color has-text-color has-link-color wp-elements-3df65509949893e818c6340b0615712b" style="font-size:19px"><a href="https://www.iv.lt/wordpress-hostingas/">Sužinoti daugiau &gt;</a></p>
+
+
+
+<p></p>
+</div></div>
+
+
+
+<div style="height:20px;"></div>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="135" height="135" src="https://www.iv.lt/wp-content/uploads/2025/11/Planas_pastui.svg" alt="" class="wp-image-18901 size-full"/></figure><div class="wp-block-media-text__content">
+<p></p>
+
+
+
+<p style="font-size:25px"><strong>Svetainių talpinimas ir el. paštas</strong></p>
+
+
+
+<p style="font-size:19px">Svetainių talpinimo planai tinka tiek paprastoms svetainėms ir el. paštui, tiek augantiems projektams, kuriems reikia daugiau laisvės.</p>
+
+
+
+<p style="font-size:19px">Galite rinktis planus <strong>su ribotais resursais</strong>, kai aiškiai žinote savo poreikius, arba <strong>su neribotais resursais</strong>, kai nenorite skaičiuoti vietos, srauto ir el. pašto dėžučių.</p>
+
+
+
+<p class="has-green-color has-text-color has-link-color wp-elements-4a24ea829b9d5083e1bb4cf7dfbbe5e3" style="font-size:19px"><a href="http://www.iv.lt/talpinimo-planai">Sužinoti daugiau &gt; </a></p>
+
+
+
+<p class="has-green-color has-text-color has-link-color wp-elements-12978816a2b920762e1edd8dbafbb728"></p>
+</div></div>
+
+
+
+<div style="height:20px;"></div>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="135" height="135" src="https://www.iv.lt/wp-content/uploads/2026/02/Profesonalus_talpinimas.svg" alt="" class="wp-image-19137 size-full"/></figure><div class="wp-block-media-text__content">
+<p></p>
+
+
+
+<p style="font-size:25px"><strong>Prohostingo paslaugos</strong></p>
+
+
+
+<p style="font-size:19px">Ši paslauga skirta projektams, kuriems reikia ypatingo patikimumo, lankstumo ir didelių serverio resursų.</p>
+
+
+
+<p style="font-size:19px">Kai įprasto hostingo ar VPS nepakanka, o nuosavo serverio priežiūra reikalauja per daug laiko, prohostingas leidžia tai patikėti profesionalams. 24/7 pasirūpiname infrastruktūra, saugumu ir serverio priežiūra, kad jūs galėtumėte susitelkti į savo projektą.</p>
+
+
+
+<p style="font-size:19px">Tai sprendimas didesniems, augantiems ar verslo kritiniams projektams, kuriems svarbus maksimalus patikimumas ir profesionali serverio priežiūra.</p>
+
+
+
+<p class="has-green-color has-text-color has-link-color wp-elements-60cf011d25c7d8de50c99e7a6c54eaea" style="font-size:19px"><a href="https://www.iv.lt/profesionalus-hostingas/">Sužinoti daugiau &gt; </a></p>
+
+
+
+<p></p>
+</div></div>
+
+
+
+<div style="height:20px;"></div>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="135" height="135" src="https://www.iv.lt/wp-content/uploads/2026/02/Serveriu_spintos.svg" alt="" class="wp-image-19125 size-full"/></figure><div class="wp-block-media-text__content">
+<p></p>
+
+
+
+<p style="font-size:25px"><strong>VPS serveriai</strong></p>
+
+
+
+<p style="font-size:19px">VPS serveriai skirti projektams, kuriems įprasto hostingo nepakanka ir reikia daugiau galios, lankstumo bei kontrolės. Tai sprendimas tiems, kuriems reikia ne tik talpinti svetainę, bet ir turėti pilnai valdomą serverio aplinką.</p>
+
+
+
+<p style="font-size:19px">Tai virtualūs serveriai su atskirais resursais – procesoriumi, RAM atmintimi, vieta diske ir IP adresu. Galite patys pasirinkti operacinę sistemą, konfigūraciją ir diegti reikalingas sistemas ar programas pagal savo poreikius.</p>
+
+
+
+<p class="has-green-color has-text-color has-link-color wp-elements-5180beb28c1c2bb47893ee4712495e09" style="font-size:19px"><a href="https://www.iv.lt/vps-serveriai/#linux">Sužinoti daugiau &gt; </a></p>
+
+
+
+<p></p>
+</div></div>
+
+
+
+<div style="height:30px;"></div>
+
+
+
+<h2 class="wp-block-heading has-text-align-center" id="h-prisijungimai-klientams">Prisijungimai klientams</h2>
+
+
+
+<p class="has-text-align-left" style="font-size:19px">Jei naudojote serveriai.lt prisijungimui prie paslaugų &#8211; viską rasite čia:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:19px"><a href="https://pastas.serveriai.lt/">Prisijungti prie WebMail (pašto)</a></li>
+
+
+
+<li style="font-size:19px"><a href="https://klientams.iv.lt/?command=signin">Klientų sistema ir sąskaitos</a></li>
+
+
+
+<li style="font-size:19px"><a href="https://www.iv.lt/pagalba/Serverio_valdymo_pultas">Kaip prisijungti prie DirectAdmin valdymo</a></li>
+</ul>
+
+
+
+<div style="height:40px;"></div>
+
+
+
+<h2 class="wp-block-heading has-text-align-center" id="h-interneto-vizijoje-rasite-ir-daugiau-sprendimu-jusu-projektui">Interneto vizijoje rasite ir daugiau sprendimų jūsų projektui</h2>
+
+
+
+<p class="has-text-align-center" style="font-size:19px">Be talpinimo paslaugų taip pat siūlome ir kitas paslaugas, reikalingas jūsų interneto projektui.</p>
+
+
+
+<p class="has-text-align-center" style="font-size:19px"><a href="https://www.iv.lt/domenai/">Domenų registravimas</a>, <a href="https://www.iv.lt/svetaines-kurimo-irankis/">svetainių kūrimo įrankiai</a> ir <a href="https://www.iv.lt/ismanus-ai-svetaines-kurimo-vedlys/">išmanus AI svetainės kūrimo vedlys</a>.<br><a href="https://www.iv.lt/sertifikatai/">SSL sertifikatai</a>, <a href="http://iv.lt/vpn/">VPN paslauga</a>, <a href="https://www.iv.lt/svetaines-saugumo-irankis/">el. pašto apsauga</a>, <a href="https://www.iv.lt/svetaines-saugumo-irankis/">svetainių saugumo sprendimai</a>.</p>
+
+
+
+<div style="height:40px;"></div>
+
+
+
+<h3 class="wp-block-heading has-text-align-center" id="h-serveriai-lt-niekur-nedingo-visas-paslaugas-dabar-rasite-interneto-vizijoje"><strong>Serveriai.lt niekur nedingo &#8211; visas paslaugas dabar rasite Interneto vizijoje.</strong></h3>
+
+
+
+<p class="has-text-align-center" style="font-size:19px">Jei nesate tikri, ką pasirinkti, mūsų komanda padės jums išsirinkti tinkamiausią sprendimą.</p>
+
+
+
+<p class="has-text-align-center" style="font-size:19px"><a href="tel:+370 (5) 232 4444">+370 (5) 232 4444</a></p>
+
+
+
+<p class="has-text-align-center" style="font-size:19px"><a href="mailto:info@iv.lt">info@serveriai.lt</a></p>
+
+
+
+<div style="height:60px;"></div>
+
+
+
+<p></p>
+
+			</div>
+		</div>
+
+                            	</div>
+
+            
+    <div class="bg-gray-2 reveal overflow-hidden" id="planai">
+        <div class="container mx-auto">
+            <div class="text-center pt-10 pb-10">
+                                                            <h3 class="text-22px lg:text-32px uppercase">SIŪLOME VISAS TALPINIMO PASLAUGAS</h3>
+                                        <h5 class="text-sm lg:text-lg font-light mt-4 lg:mt-6 mb-8 max-w-260px leading-custom-2 lg:max-w-full mx-auto">Viskas, ko reikia tapti matomiems internete.</h5>
+                                                    <div class="slider-planai-cont">
+                        <div class="swiper-container glide slider-planai">
+                            <ul class="swiper-wrapper">
+                                                                    <li class="swiper-slide">
+                                                                                    <a class="planai-card transition shadow-custom hover:shadow-custom-1" href="https://www.iv.lt/talpinimo-planai/" >
+                                                                                        <div class="planai-card-line"></div>
+                                                <div><h3 class="planai-card-title">Svetainės ir el. pašto talpinimo planai</h3></div>
+                                                                                                    <div>
+                                                        <ul class="planai-card-list">
+                                                                                                                            <li>Pagalba telefonu kasdien</li>
+                                                                                                                            <li>Naujos PHP ir SQL versijos</li>
+                                                                                                                            <li>Atsarginės kopijos</li>
+                                                                                                                            <li>Mėnesiniai planai</li>
+                                                                                                                            <li>Pinigų grąžinimo garantija</li>
+                                                                                                                    </ul>
+                                                    </div>
+                                                                                                <div class="planai-price">
+                                                    <div class="mb-1">
+                                                        <span class="planai-price-big">
+                                                                                                                            <span class="text-base mr-2">nuo</span>
+                                                                                                                        3.99
+                                                        </span>
+                                                    </div>
+                                                                                                            <div><span class="font-bold">EUR/</span><span class="font-light">mėn.</span></div>
+                                                                                                        <object><a href="https://www.iv.lt/talpinimo-planai/" class="text-blue button button-default button-default--green text-center read_more hover-white">Užsakyti </a></object>
+                                                </div>
+                                                                                    </a>
+                                                                            </li>
+                                                                    <li class="swiper-slide">
+                                                                                    <a class="planai-card transition shadow-custom hover:shadow-custom-1" href="https://www.iv.lt/svetaines-kurimo-irankis/" >
+                                                                                        <div class="planai-card-line"></div>
+                                                <div><h3 class="planai-card-title">Svetainės kūrimo įrankis</h3></div>
+                                                                                                    <div>
+                                                        <ul class="planai-card-list">
+                                                                                                                            <li>Nereikia programavimo žinių</li>
+                                                                                                                            <li>Dizainerių kurti šablonai</li>
+                                                                                                                            <li>Svetainė per 30 min.</li>
+                                                                                                                            <li>Dizainai pritaikyti išmaniesiems telefonams</li>
+                                                                                                                    </ul>
+                                                    </div>
+                                                                                                <div class="planai-price">
+                                                    <div class="mb-1">
+                                                        <span class="planai-price-big">
+                                                                                                                            <span class="text-base mr-2">nuo</span>
+                                                                                                                        0.00
+                                                        </span>
+                                                    </div>
+                                                                                                            <div><span class="font-bold">EUR/</span><span class="font-light">mėn.</span></div>
+                                                                                                        <object><a href="https://www.iv.lt/svetaines-kurimo-irankis/" class="text-blue button button-default button-default--green text-center read_more hover-white">Užsakyti </a></object>
+                                                </div>
+                                                                                    </a>
+                                                                            </li>
+                                                                    <li class="swiper-slide">
+                                                                                    <a class="planai-card transition shadow-custom hover:shadow-custom-1" href="https://www.iv.lt/vps-serveriai/" >
+                                                                                        <div class="planai-card-line"></div>
+                                                <div><h3 class="planai-card-title">VPS serveriai</h3></div>
+                                                                                                    <div>
+                                                        <ul class="planai-card-list">
+                                                                                                                            <li>8 skirtingo dydžio planai</li>
+                                                                                                                            <li>„Linux“ ir „Windows“ serveriai</li>
+                                                                                                                            <li>Administruojami savarankiškai</li>
+                                                                                                                            <li>Aktyvavimas per 5 min.</li>
+                                                                                                                    </ul>
+                                                    </div>
+                                                                                                <div class="planai-price">
+                                                    <div class="mb-1">
+                                                        <span class="planai-price-big">
+                                                                                                                            <span class="text-base mr-2">nuo</span>
+                                                                                                                        4.99
+                                                        </span>
+                                                    </div>
+                                                                                                            <div><span class="font-bold">EUR/</span><span class="font-light">mėn.</span></div>
+                                                                                                        <object><a href="https://www.iv.lt/vps-serveriai/" class="text-blue button button-default button-default--green text-center read_more hover-white">Užsakyti </a></object>
+                                                </div>
+                                                                                    </a>
+                                                                            </li>
+                                                                    <li class="swiper-slide">
+                                                                                    <a class="planai-card transition shadow-custom hover:shadow-custom-1" href="https://www.iv.lt/sertifikatai/" >
+                                                                                        <div class="planai-card-line"></div>
+                                                <div><h3 class="planai-card-title">SSL sertifikatai</h3></div>
+                                                                                                    <div>
+                                                        <ul class="planai-card-list">
+                                                                                                                            <li>Patikimi teikėjai </li>
+                                                                                                                            <li>Greitas aktyvavimas</li>
+                                                                                                                            <li>Pritaikyti mobiliesiems telefonams</li>
+                                                                                                                            <li>Užtikrina aukštesnes „Google“ pozicijas</li>
+                                                                                                                    </ul>
+                                                    </div>
+                                                                                                <div class="planai-price">
+                                                    <div class="mb-1">
+                                                        <span class="planai-price-big">
+                                                                                                                            <span class="text-base mr-2">nuo</span>
+                                                                                                                        26.66
+                                                        </span>
+                                                    </div>
+                                                                                                            <div><span class="font-bold">EUR/</span><span class="font-light">metams</span></div>
+                                                                                                        <object><a href="https://www.iv.lt/sertifikatai/" class="text-blue button button-default button-default--green text-center read_more hover-white">Užsakyti </a></object>
+                                                </div>
+                                                                                    </a>
+                                                                            </li>
+                                                            </ul>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+    
+
+        <div class="bg-white pt-8 lg:pt-8 pb-4 lg:pb-8 border-t border-gray-2 border-width-2" id="products">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap items-center text-center logos-div">
+                
+                    <span class="w-1/2 lg:w-1/6 mb-4 lg:mb-0" >
+                        
+                            <img class="max-w-80-w-full"  src="https://www.iv.lt/wp-content/uploads/2024/01/Interneto_Vizija_Logotipas_RGB_Colour.svg" alt="IV logotipas"/>
+
+                                            </span>
+
+                            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray-2">
+    <footer class="container mx-auto lg:pt-8">
+        <div class="pb-8 hidden lg:flex">
+                            <div class="w-full lg:w-1/4">
+                    <img class="mb-6 max-w-197px" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/images/logo.svg" alt="Interneto vizija"/>
+                                            <div class="mb-2">
+                                                             <a href="tel:+37052324444"
+                                                  >+370 5 232 4444</a>
+                                                    </div>
+                                            <div class="mb-2">
+                                                             <a href="mailto:info@iv.lt"
+                                                  >info@iv.lt</a>
+                                                    </div>
+                                            <div class="mb-2">
+                                                            J. Kubiliaus g. 6, Vilnius, Lietuva
+                                                    </div>
+                                    </div>
+            
+                                                                                                        <div class="w-full lg:w-1/4">
+                                <ul class="leading-loose font-medium">
+                                    <li><a href="https://www.iv.lt/domenai/">Domenai ir jų registravimas</a></li>
+                                                                                                                        <li><a href="https://www.iv.lt/talpinimo-planai/">Svetainių talpinimas ir el. paštas</a></li>
+                                                                                    <li><a href="https://www.iv.lt/profesionalus-hostingas/">Prohostingo paslaugos</a></li>
+                                                                                    <li><a href="https://www.iv.lt/wordpress-hostingas/">WordPress hostingas</a></li>
+                                                                                    <li><a href="https://www.iv.lt/vps-serveriai/">VPS serveriai</a></li>
+                                                                                    <li><a href="https://www.iv.lt/sertifikatai/">SSL sertifikatai</a></li>
+                                                                                    <li><a href="https://www.iv.lt/vpn/">VPN paslauga</a></li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="w-full lg:w-1/4">
+                                <ul class="leading-loose font-medium">
+                                    <li><a href="https://www.iv.lt/svetaines-kurimo-irankis/">Svetainės kūrimo įrankis</a></li>
+                                                                                                                        <li><a href="https://www.iv.lt/el-pasto-filtras/">Profesionalus el. pašto filtras</a></li>
+                                                                                    <li><a href="https://www.iv.lt/svetaines-saugumo-irankis/">Svetainės saugumo įrankis</a></li>
+                                                                                    <li><a href="https://www.iv.lt/seo-irankis/">SEO įrankis</a></li>
+                                                                                                            </ul>
+                            </div>
+                                                    <div class="w-full lg:w-1/4">
+                                <ul class="leading-loose font-medium">
+                                    <li><a href="https://pagalba.iv.lt/">Pagalba</a></li>
+                                                                                                                        <li><a href="https://klientams.iv.lt/">Klientų sistema</a></li>
+                                                                                    <li><a href="https://www.iv.lt/privatumo-politika/">Privatumo politika</a></li>
+                                                                                    <li><a href="https://www.iv.lt/sutarciu-sablonai/">Paslaugų teikimo sąlygos</a></li>
+                                                                                    <li><a href="https://www.gedimai.lt/">Gedimai, profilaktikos</a></li>
+                                                                                    <li><a href="https://www.iv.lt/whois/">WHOIS</a></li>
+                                                                                                            </ul>
+                            </div>
+                                            
+                                                                <div class="w-full lg:w-1/4">
+                            <ul class="leading-loose font-medium">
+                                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-318">
+                                        <a href="https://www.iv.lt/apie-mus/"  class="hover:underline">
+                                            Apie mus
+                                                                                    </a>
+                                    </li>
+                                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-743">
+                                        <a href="https://www.iv.lt/blogas/"  class="hover:underline">
+                                            BLOGas
+                                                                                    </a>
+                                    </li>
+                                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-10088">
+                                        <a href="https://www.iv.lt/karjera/"  class="hover:underline">
+                                            Karjera
+                                                                                    </a>
+                                    </li>
+                                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-9943">
+                                        <a href="https://www.iv.lt/partneriu-programa/"  class="hover:underline">
+                                            Partnerių programa
+                                                                                    </a>
+                                    </li>
+                                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-320">
+                                        <a href="https://www.iv.lt/kontaktai/"  class="hover:underline">
+                                            Kontaktai
+                                                                                    </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                                
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2003-2025 UAB „Interneto vizija”</div>
+            <div>Visos kainos yra nurodytos be PVM</div>
+        </div>
+
+        <script>
+            function setCookie(name, value, hours) {
+                var expires = "";
+                if (hours) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/; domain=iv.lt";
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const transID = urlParams.get('t');
+
+            if (transID) {
+                setCookie('transID', transID, 1);
+            }
+        </script>
+
+        <script data-cookieconsent="ignore"
+                src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+        <script type="text/javascript" data-cookieconsent="ignore"
+                src="https://iv.lt/wp-content/themes/digiTheme/assets/main.js"></script>
+    </footer>
+</div>
+<div class="back-to-top"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/digiTheme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+            <script>
+                async function checkStatus() {
+                    try {
+                        const response = await fetch('https://paslaugos.iv.lt/intercom.php?type=intercom_chat_lt');
+                        const text = await response.text();
+                        const result = JSON.parse(text);
+                        let status = result.status === 'yes';
+                        if (status) {
+                            showIntercom();
+                        }
+                    } catch (error) {
+                        console.error('Error fetching status:', error);
+                    }
+                }
+
+                checkStatus();
+
+                function showIntercom() {
+                    // ===================
+                    // CONFIG (GUEST MODE)
+                    // ===================
+                    const APP_ID = "vwhwt4d6";
+                    const COOKIE_DOMAIN = ".iv.lt"; // <-- CHANGE THIS (share across root + subdomain)
+                    const GUEST_SESSION_MINUTES = 15;
+
+                    const GUEST_UID_COOKIE = "iv_intercom_uid";
+                    const GUEST_UID_MAX_AGE_SECONDS = GUEST_SESSION_MINUTES * 60;
+                    const INTERCOM_SESSION_DURATION_MS = GUEST_SESSION_MINUTES * 60 * 1000;
+
+                    let intercomLoaded = false;
+                    let intercomBooted = false;
+                    let idleTimer = null;
+
+                    const startedAt = performance.now();
+
+                    function getCookie(name) {
+                        const match = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+                        return match ? decodeURIComponent(match[1]) : null;
+                    }
+
+                    function setCookie(name, value, maxAgeSeconds) {
+                        const secure = location.protocol === "https:" ? "; Secure" : "";
+                        document.cookie =
+                            `${name}=${encodeURIComponent(value)}` +
+                            `; Max-Age=${maxAgeSeconds}` +
+                            `; Path=/` +
+                            `; Domain=${COOKIE_DOMAIN}` +
+                            `; SameSite=Lax` +
+                            secure;
+                    }
+
+                    function deleteCookie(name) {
+                        const secure = location.protocol === "https:" ? "; Secure" : "";
+                        document.cookie =
+                            `${name}=` +
+                            `; Max-Age=0` +
+                            `; Path=/` +
+                            `; Domain=${COOKIE_DOMAIN}` +
+                            `; SameSite=Lax` +
+                            secure;
+                    }
+
+                    function clearIntercomCookies() {
+                        deleteCookie(`intercom-id-${APP_ID}`);
+                        deleteCookie(`intercom-session-${APP_ID}`);
+                    }
+
+                    if (!getCookie(GUEST_UID_COOKIE)) {
+                        clearIntercomCookies();
+                    }
+
+                    function generateId() {
+                        return (crypto.randomUUID
+                                ? crypto.randomUUID()
+                                : "iv_" + Math.random().toString(36).slice(2) + Date.now().toString(36)
+                        );
+                    }
+
+                    function getOrCreateGuestId() {
+                        const existing = getCookie(GUEST_UID_COOKIE);
+                        if (existing) return existing;
+
+                        clearIntercomCookies();
+
+                        const id = generateId();
+                        setCookie(GUEST_UID_COOKIE, id, GUEST_UID_MAX_AGE_SECONDS);
+                        return id;
+                    }
+
+                    function shutdownForPrivacy() {
+                        if (typeof window.Intercom === "function") {
+                            try { window.Intercom("shutdown"); } catch (e) {}
+                        }
+                        deleteCookie(GUEST_UID_COOKIE);
+                        clearIntercomCookies();
+
+                        intercomLoaded = false;
+                        intercomBooted = false;
+                    }
+
+                    function resetIdleTimer(guestId) {
+                        setCookie(GUEST_UID_COOKIE, guestId, GUEST_UID_MAX_AGE_SECONDS);
+
+                        if (idleTimer) clearTimeout(idleTimer);
+                        idleTimer = setTimeout(shutdownForPrivacy, INTERCOM_SESSION_DURATION_MS);
+                    }
+
+                    function isRealUserEvent(e) {
+                        if (e && e.isTrusted === false) return false;
+                        if (performance.now() - startedAt < 1500) return false;
+                        return true;
+                    }
+
+                    function getParam(param) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        return urlParams.get(param);
+                    }
+
+                    function ensureIntercomScriptLoaded() {
+                        if (window.__ivIntercomScriptInjected) return;
+                        window.__ivIntercomScriptInjected = true;
+
+                        const d = document;
+                        const s = d.createElement("script");
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://widget.intercom.io/widget/" + APP_ID;
+                        s.setAttribute("data-no-optimize", "1");
+                        (d.head || d.body).appendChild(s);
+                    }
+
+                    function loadIntercomForRealUser(e) {
+                        if (!isRealUserEvent(e)) return;
+
+                        if (intercomLoaded && intercomBooted) {
+                            const gid = getCookie(GUEST_UID_COOKIE) || getOrCreateGuestId();
+                            resetIdleTimer(gid);
+                            return;
+                        }
+
+                        intercomLoaded = true;
+
+                        const guestUserId = getOrCreateGuestId();
+
+                        window.intercomSettings = {
+                            api_base: "https://api-iam.eu.intercom.io",
+                            app_id: APP_ID,
+                            brand: "Interneto vizija",
+                            language_override: "lt",
+
+                            user_id: guestUserId,
+
+                            session_duration: INTERCOM_SESSION_DURATION_MS
+                        };
+
+                        if (typeof window.Intercom !== "function") {
+                            const i = function () { i.c(arguments); };
+                            i.q = [];
+                            i.c = function (args) { i.q.push(args); };
+                            window.Intercom = i;
+                        }
+
+                        ensureIntercomScriptLoaded();
+
+                        if (!intercomBooted) {
+                            window.Intercom("boot", window.intercomSettings);
+                            intercomBooted = true;
+                        } else {
+                            window.Intercom("update", window.intercomSettings);
+                        }
+
+                        resetIdleTimer(guestUserId);
+
+                        document.addEventListener("visibilitychange", () => {
+                            if (!document.hidden) {
+                                const gid = getCookie(GUEST_UID_COOKIE) || getOrCreateGuestId();
+                                if (typeof window.Intercom === "function") {
+                                    window.Intercom("update", window.intercomSettings);
+                                }
+                                resetIdleTimer(gid);
+                            }
+                        });
+
+                        window.addEventListener("focus", () => {
+                            const gid = getCookie(GUEST_UID_COOKIE) || getOrCreateGuestId();
+                            if (typeof window.Intercom === "function") {
+                                window.Intercom("update", window.intercomSettings);
+                            }
+                            resetIdleTimer(gid);
+                        });
+
+                        ["pointerdown", "keydown", "click", "scroll", "touchstart", "mousemove"].forEach(evtName => {
+                            window.addEventListener(evtName, (evt) => {
+                                if (!isRealUserEvent(evt)) return;
+                                const gid = getCookie(GUEST_UID_COOKIE);
+                                if (gid) resetIdleTimer(gid);
+                            }, { passive: true });
+                        });
+
+                        if (getParam("openChat") === "true") {
+                            setTimeout(() => {
+                                if (typeof window.Intercom === "function") window.Intercom("show");
+                            }, 800);
+                        }
+                    }
+
+                    function onScroll(e) {
+                        if (!isRealUserEvent(e)) return;
+                        if ((window.scrollY || 0) < 120) return;
+                        loadIntercomForRealUser(e);
+                    }
+
+                    function onMouseMove(e) {
+                        if (!isRealUserEvent(e)) return;
+                        if ((Math.abs(e.movementX) + Math.abs(e.movementY)) < 8) return;
+                        loadIntercomForRealUser(e);
+                    }
+
+                    window.addEventListener("pointerdown", loadIntercomForRealUser, { passive: true });
+                    window.addEventListener("keydown", loadIntercomForRealUser);
+                    window.addEventListener("touchstart", loadIntercomForRealUser, { passive: true });
+                    window.addEventListener("mousemove", onMouseMove, { passive: true });
+                    window.addEventListener("scroll", onScroll, { passive: true });
+                }
+            </script>
+        <script type="text/javascript" id="custom-header-info-js-js-extra">
+/* <![CDATA[ */
+var CHI = {"ajax_url":"https://www.iv.lt/wp-admin/admin-ajax.php","lang":"lt"};
+//# sourceURL=custom-header-info-js-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/plugins/custom-header-info/js/custom-header-info.js" id="custom-header-info-js-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="eyeonid-script-js-extra">
+/* <![CDATA[ */
+var myPluginAjax = {"ajaxurl":"https://www.iv.lt/wp-admin/admin-ajax.php"};
+//# sourceURL=eyeonid-script-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/plugins/eyeonid-check/eyeonid-script.js" id="eyeonid-script-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/mobile-menu.js" id="mobile-menu-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/jquery.fancybox.min.js" id="digi-fancybox-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-includes/js/underscore.min.js" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
+//# sourceURL=wp-util-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.iv.lt/wp-includes/js/wp-util.min.js" id="wp-util-js"></script>
+<script type="text/javascript" id="digi-main-js-extra">
+/* <![CDATA[ */
+var digi_ajax = {"ajax_url":"https://www.iv.lt/wp-admin/admin-ajax.php"};
+//# sourceURL=digi-main-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/main.js" id="digi-main-js"></script>
+<script type="text/javascript" src="https://www.iv.lt/wp-content/themes/digiTheme/assets/mobile-menu-languages.js" id="mobile-menu-languages-js"></script>
+
+
+<script type="text/javascript">
+    var _smid = "3b9c492be017f5cf";
+    (function (w, r, a, sm, s) {
+        w['SalesmanagoObject'] = r;
+        w[r] = w[r] || function () {
+            (w[r].q = w[r].q || []).push(arguments)
+        };
+        sm = document.createElement('script');
+        sm.type = 'text/javascript';
+        sm.async = true;
+        sm.src = a;
+        s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(sm, s);
+    })(window, 'sm', ('https:' == document.location.protocol ? 'https://' : 'http://') + 'app2.salesmanago.pl/static/sm.js');
+</script>
+</body>
+
+</html>

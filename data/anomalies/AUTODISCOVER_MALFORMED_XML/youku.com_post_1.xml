@@ -1,0 +1,23 @@
+
+<a id="a-link"
+    href="https://bixi.alicdn.com/punish/punish:resource:template:heyiSpace:default_37129713.html?qrcode=yxgfPvv415DeKUurTM5XGw|abu3cA|TDry5Q_0|cloud_ip_bl|0&uuid=cb181f3efbf8d790de294bab4cce571b&action=deny&origin=https%3A%2F%2Fyouku.com%2Fautodiscover%2Fautodiscover.xml"></a>
+<script>
+var host = location.host;
+var parts = host.split('.');
+if (parts.length > 2){
+  host = parts.pop();
+  host = "." + parts.pop() + "." + host;
+}
+var exp = new Date();
+var maxAge = -100;
+exp.setTime(exp.getTime() + maxAge);
+var cookie = "x5secdata=;maxAge=" + maxAge + ";expires=" + exp.toUTCString() + ";path=/;domain=" + host + ";";
+document.cookie = cookie;
+document.cookie = cookie + 'Secure;SameSite=None';
+document.getElementById("a-link").click();
+ window._config_ = {
+   "action": "deny",
+   "url": "https://bixi.alicdn.com/punish/punish:resource:template:heyiSpace:default_37129713.html?qrcode=yxgfPvv415DeKUurTM5XGw|abu3cA|TDry5Q_0|cloud_ip_bl|0&uuid=cb181f3efbf8d790de294bab4cce571b&action=deny&origin=https%3A%2F%2Fyouku.com%2Fautodiscover%2Fautodiscover.xml"
+};
+</script>
+<!--rgv587_flag:sm-->

@@ -1,0 +1,5 @@
+=== CRITICAL: 确认可抢注的域名 (真实接管漏洞) ===
+
+=== WARNING: DNS 悬空但当前处于保留/赎回期 (未来可接管) ===
+www.gov.uk
+dns.la
