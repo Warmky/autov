@@ -1,0 +1,534 @@
+======================================================================
+🚨 协议内配置冲突 (Intra-protocol Split-Brain) 深度溯源报告 🚨
+======================================================================
+
+[1] 危险域名: yandex.net
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[2] 危险域名: mailinabox.email
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 2)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 4)
+    ┣━ 归宿: occams.info
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[3] 危险域名: yandex.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[4] 危险域名: mit.edu
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 2)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 4)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[5] 危险域名: vk.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[6] 危险域名: ok.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[7] 危险域名: yandex.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[8] 危险域名: mail.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[9] 危险域名: plesk.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 2)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 4)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[10] 危险域名: vk.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[11] 危险域名: my.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[12] 危险域名: ya.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[13] 危险域名: vkontakte.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[14] 危险域名: seznam.cz
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[15] 危险域名: onet.pl
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX (Index: 1)
+    ┃    ┗━ 探测依据: Method: MX (Index: 2)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[16] 危险域名: yandex.com.tr
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[17] 危险域名: caiway.net
+  [Autodiscover 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: post (Index: 2)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 2)
+    ┣━ 归宿: caiw.net
+    ┃    ┗━ 探测依据: Method: srv-post (Index: 0)
+----------------------------------------------------------------------
+[18] 危险域名: a-mo.net
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[19] 危险域名: yandex.kz
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[20] 危险域名: gcash.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[21] 危险域名: novinky.cz
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: seznam.cz
+    ┃    ┗━ 探测依据: Method: MX (Index: 2)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[22] 危险域名: gdz.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[23] 危险域名: tktube.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[24] 危险域名: tmohentai.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: dondominio.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[25] 危险域名: zonatmo.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: dondominio.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[26] 危险域名: rustore.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[27] 危险域名: digi24.ro
+  [Autodiscover 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: post (Index: 2)
+    ┃    ┗━ 探测依据: Method: post (Index: 3)
+    ┃    ┗━ 探测依据: Method: get_post (Index: 0)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 2)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 3)
+    ┣━ 归宿: rcs-rds.ro
+    ┃    ┗━ 探测依据: Method: srv-post (Index: 0)
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: rcs-rds.ro
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[28] 危险域名: smailru.net
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[29] 危险域名: mirtesen.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[30] 危险域名: kinopoisk.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[31] 危险域名: admatic.de
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 2)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 4)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[32] 危险域名: dondominio.com
+  [Autodiscover 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: post (Index: 2)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 2)
+    ┣━ 归宿: panel247.com
+    ┃    ┗━ 探测依据: Method: post (Index: 3)
+    ┃    ┗━ 探测依据: Method: srv-post (Index: 0)
+    ┃    ┗━ 探测依据: Method: get_post (Index: 0)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 3)
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: panel247.com
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[33] 危险域名: ipapi.co
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[34] 危险域名: vkvideo.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[35] 危险域名: onlinepbx.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[36] 危险域名: telstra.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: bigpond.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[37] 危险域名: max.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[38] 危险域名: serving-sys.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[39] 危险域名: oneme.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[40] 危险域名: proton.me
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: protonmail.ch
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[41] 危险域名: insales.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[42] 危险域名: uchi.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[43] 危险域名: zerocdn.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: mnogobyte.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[44] 危险域名: vkplay.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[45] 危险域名: narod.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[46] 危险域名: amxrtb.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[47] 危险域名: laracasts.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[48] 危险域名: urbandictionary.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[49] 危险域名: ip.sb
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[50] 危险域名: libero.it
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[51] 危险域名: websupport.sk
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[52] 危险域名: emojipedia.org
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[53] 危险域名: yandex.by
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 1)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: ISPDB (Index: 0)
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+----------------------------------------------------------------------
+[54] 危险域名: adfox.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[55] 危险域名: vkusvill.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[56] 危险域名: aqsi.ru
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[57] 危险域名: udel.edu
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 2)
+    ┃    ┗━ 探测依据: Method: directurl (Index: 4)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[58] 危险域名: uuidksinc.net
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: yandex.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[59] 危险域名: memcached.org
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: messagingengine.com
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[60] 危险域名: nexx360.io
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: directurl (Index: 3)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX (Index: 4)
+----------------------------------------------------------------------
+[61] 危险域名: programmatica.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[62] 危险域名: iinet.net.au
+  [Autodiscover 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: post (Index: 2)
+    ┃    ┗━ 探测依据: Method: post (Index: 3)
+    ┣━ 归宿: atmailcloud.com
+    ┃    ┗━ 探测依据: Method: srv-post (Index: 0)
+----------------------------------------------------------------------
+[63] 危险域名: astrumnival.com
+  [Autoconfig 机制脑裂]
+    ┣━ 归宿: mail.ru
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 1)
+    ┣━ 归宿: thunderbird.net
+    ┃    ┗━ 探测依据: Method: MX_samedomain (Index: 3)
+----------------------------------------------------------------------
+[64] 危险域名: zoho.eu
+  [Autodiscover 机制脑裂]
+    ┣━ 归宿: Self-Hosted
+    ┃    ┗━ 探测依据: Method: post (Index: 2)
+    ┃    ┗━ 探测依据: Method: post (Index: 3)
+    ┃    ┗━ 探测依据: Method: srv-post (Index: 0)
+    ┃    ┗━ 探测依据: Method: get_post (Index: 0)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 2)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 3)
+    ┣━ 归宿: zoho.com
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 1)
+    ┃    ┗━ 探测依据: Method: direct_get (Index: 4)
+----------------------------------------------------------------------

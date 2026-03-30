@@ -1,6 +1,6 @@
 import pandas as pd
 import plotly.graph_objects as go
-
+#手动绘制以国家为边界的桑基图，定制redirect2_2
 def generate_geopolitical_sankey(input_csv, output_html):
     print("🎨 开始绘制学术级地缘政治桑基图 (Geopolitical Sankey)...")
     

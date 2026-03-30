@@ -3,7 +3,7 @@ import tldextract
 import pandas as pd
 import os
 
-# 先从最原始的扫描结果文件init.jsonl中得到重定向链有待统计的几个指标，放到一个.csv文件里，后接plot_cdf.py绘制图表
+# 先从最原始的扫描结果文件init.jsonl中得到重定向链有待统计的几个指标，放到一个.csv文件里，后接plot_cdf.py绘制图表 redirect1_1
 # =====================================================================
 # 模块一：权威实体解析引擎 (Entity Resolution Engine)
 # 作用：将杂乱的域名统一映射为背后的实际商业实体（如 sharepoint.com -> Microsoft）

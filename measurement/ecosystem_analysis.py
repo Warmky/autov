@@ -2,7 +2,7 @@ import json
 import tldextract
 import pandas as pd
 import os
-
+#探究自动化配置生态情况的，包括是否被大型服务商垄断、长尾服务商、国家为单位数据主权流向 redirect2_1，下接measurement/draw_hero_sanky.py
 # =====================================================================
 # 复用我们的防弹实体解析器 (保持不变)
 # =====================================================================
@@ -69,7 +69,7 @@ def analyze_ecosystem(input_file, output_sankey_csv, entities_path):
             
             all_entries = autodiscover_entries + autoconfig_entries
             
-            # 2. 唯一的遍历循环
+            # 2. 唯一的遍历循环 (以域名为单位的“短路探测”)
             for entry in all_entries:
                 # 必须且只能看 SUCCESS 的数据
                 if entry.get("status_tag") != "SUCCESS":
@@ -93,6 +93,10 @@ def analyze_ecosystem(input_file, output_sankey_csv, entities_path):
                     "service_type": service_type,
                     "provider": hosting_provider
                 })
+                
+                # 【神级修复】：真实客户端一旦拿到配置就会停止探测。
+                # 加上 break，确保 1个域名 绝对只投 1票！彻底挤干水分！
+                break
 
     df = pd.DataFrame(records)
     if df.empty:
@@ -114,7 +118,8 @@ def analyze_ecosystem(input_file, output_sankey_csv, entities_path):
 
     # 2. 长尾生存现状分析
     cumulative_shares = market_shares.cumsum()
-    top_90_percent_cutoff = cumulative_shares[cumulative_shares <= 90].count()
+    # 修复：寻找累积份额【还没到90%】的数量，再加上刚好跨过90%的那 1 家
+    top_90_percent_cutoff = len(cumulative_shares[cumulative_shares < 90]) + 1
     long_tail_count = len(market_shares) - top_90_percent_cutoff
     print(f"\n💡 长尾现状: 前 {top_90_percent_cutoff} 家巨头瓜分了 90% 的市场，剩下的 {long_tail_count} 家长尾服务商在底层的 10% 中艰难求生。")
 
