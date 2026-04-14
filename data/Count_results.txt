@@ -1,0 +1,59 @@
+
+=== Count result for Method: Ecosystem Overview ===
+AutoDisc_Err_Invalid : 6
+AutoConf_SMTP_1325 : 3
+Usage_SRV : 2044
+AutoDisc_SSL_on : 453
+AutoDisc_SSL_TLS : 39
+AutoConf_SSL_STARTTLS : 1464
+SRV_SMTP_587 : 35
+AutoDisc_SMTP_465 : 194
+AutoDisc_SSL_SSL : 34
+AutoDisc_IMAP_143 : 12
+Usage_Autoconfig : 2044
+SRV_SMTP_465 : 16
+AutoDisc_POP_995 : 7
+AutoConf_POP_110 : 3
+AutoConf_IMAP_1143 : 18
+AutoDisc_SSL_N/A : 3
+SRV_IMAP_1935 : 8
+SRV_POP3_1935 : 8
+AutoConf_IMAP_993 : 2717
+Issue_Internal_Autoconfig_Diff : 540
+AutoDisc_SSL_off : 17
+AutoConf_SMTP_1025 : 18
+AutoDisc_IMAP_1143 : 4
+Issue_Overall_Inconsistent : 554
+SRV_IMAP_143 : 23
+AutoConf_POP_995 : 6
+AutoDisc_SMTP_1025 : 4
+AutoDisc_SMTP_587 : 31
+Issue_Mechanism_Diff : 17
+AutoConf_Err_Invalid : 1085
+AutoConf_EXCHANGE_443 : 510
+AutoConf_IMAP_143 : 104
+AutoConf_SMTP_25 : 12
+AutoDisc_SMTP_undefined : 4
+AutoConf_SSL_plain : 13
+AutoDisc_IMAP_993 : 202
+AutoConf_SMTP_587 : 1213
+SRV_IMAP_993 : 47
+AutoConf_POP3_110 : 106
+SRV_Err_Invalid : 2
+AutoDisc_Err_Invalid, missing <Account> element : 4
+AutoDisc_SMTP_25 : 1
+AutoConf_SSL_SSL : 7423
+Total_Valid_Domains : 2044
+Usage_Autodiscover : 2044
+SRV_POP3_110 : 18
+AutoDisc_POP3_995 : 81
+SRV_SMTP_2525 : 1
+Issue_Internal_Autodiscover_Diff : 4
+SRV_SMTP_1935 : 8
+AutoConf_POP3_995 : 2553
+AutoConf_SMTP_465 : 1637
+SRV_POP3_995 : 22
+SRV_SMTP_25 : 2
+AutoDisc_POP3_110 : 8
+Total Valid Domains Evaluated: 2044
+Total Domains with Inconsistencies: 554

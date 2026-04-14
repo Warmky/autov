@@ -16,5 +16,6 @@ func main() {
 
 	// fmt.Println("✅ 本次扫描任务全部完成！")
 	//==========================================================
-	measurement.CountDomainsWithValidConfig("/home/wzq/project/autov/data/results_test.jsonl")
+	//measurement.CountDomainsWithValidConfig("/home/wzq/project/autov/data/results_test.jsonl")
+	measurement.CheckDifferences()
 }
