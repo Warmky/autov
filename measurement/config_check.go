@@ -300,7 +300,7 @@ func processDomainResult2(obj models.DomainResult, tracker *StatsTracker) *Domai
 				}
 			}
 
-			PortsUsage := calculatePort_Autodiscover(entry.Config)
+			PortsUsage := calculatePort_Autodiscover(entry.Config) //cal_函数将协议类型都转换为大写字母IMAP/SMTP/POP3，下同
 
 			for _, p := range PortsUsage {
 				tracker.Increment(fmt.Sprintf("AutoDisc_%s_%s", p.Protocol, p.Port))

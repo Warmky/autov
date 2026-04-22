@@ -103,27 +103,43 @@ def analyze_host_centralization(cluster_file, entities_path, output_csv, output_
             "Tier": tier
         }
         
-        # 将这些域名归入宏观提供商名下用于算份额
-        provider_domain_count[macro_provider].update(domains)
 
-    # 3. 计算市场份额与确立 Giants (巨头)
+    # 3. 严谨计算市场份额与确立 Giants (巨头)
     total_unique_domains = len(set(d for domains in host_served_domains.values() for d in domains))
     
+    # 新增：反向映射，看看每个域名到底指向了几个 Provider
+    domain_to_providers = defaultdict(set)
+    for host, domains in host_served_domains.items():
+        macro_provider = host_evaluations[host]["Provider"]
+        for d in domains:
+            domain_to_providers[d].add(macro_provider)
+
+    # 统计严谨的市场份额
+    provider_domain_count_strict = defaultdict(int)
+    for d, prov_set in domain_to_providers.items():
+        # 如果一个域名指向了多个不同的 Provider，它就是冲突的！
+        if len(prov_set) > 1:
+            provider_domain_count_strict["[Inconsistent / Conflicting Providers]"] += 1
+        else:
+            # 正常情况，只指向一个 Provider
+            sole_provider = list(prov_set)[0]
+            provider_domain_count_strict[sole_provider] += 1
+
     market_shares = {}
-    for provider, domains in provider_domain_count.items():
-        market_shares[provider] = (len(domains) / total_unique_domains) * 100
+    for provider, count in provider_domain_count_strict.items():
+        market_shares[provider] = (count / total_unique_domains) * 100
 
     # 按份额排序
     sorted_providers = sorted(market_shares.items(), key=lambda item: item[1], reverse=True)
     
-    # 提取 Top 10 作为 Giants (排除 Self-Hosted 和 Unknown)
+    # 提取 Top 10 作为 Giants (排除 Self-Hosted, Unknown 以及我们刚建的 Conflict 类别)
     giants = []
     for provider, share in sorted_providers:
-        if provider not in ["Self-Hosted (纯自建)", "[Unknown]"] and not str(provider).startswith("[IP:"):
+        if provider not in ["Self-Hosted (纯自建)", "[Unknown]", "[Inconsistent / Conflicting Providers]"] and not str(provider).startswith("[IP:"):
             giants.append(provider)
         if len(giants) >= 10:
             break
-
+        
     # 4. 更新 Tier (巨头 vs 长尾)
     for host, eval_data in host_evaluations.items():
         if eval_data["Tier"] == "Pending":
@@ -140,12 +156,17 @@ def analyze_host_centralization(cluster_file, entities_path, output_csv, output_
         for host, domains in hosts.items():
             eval_data = host_evaluations[host]
             for d in domains:
+                # 🌟 新增判断：去查一下这个域名是不是脚踏两只船？
+                # 如果它对应的 Provider 集合大于 1，说明它冲突了
+                domain_status = "Inconsistent (冲突)" if len(domain_to_providers[d]) > 1 else "Consistent (正常)"
+                
                 detailed_records.append({
                     "Protocol_Port": proto_port,
                     "Hostname": host,
                     "Domain": d,
                     "Provider": eval_data["Provider"],
-                    "Tier": eval_data["Tier"]
+                    "Tier": eval_data["Tier"],
+                    "Domain_Status": domain_status  # 🌟 新增列：让你对冲突一目了然！
                 })
 
     # 导出明细 CSV
@@ -155,6 +176,24 @@ def analyze_host_centralization(cluster_file, entities_path, output_csv, output_
     # 导出 Hostname -> Tier 的黄金映射字典
     with open(output_json, "w", encoding="utf-8") as f:
         json.dump(host_evaluations, f, indent=4)
+
+    # ==========================================
+    # 🌟 新增：导出完整的市场份额明细报表 🌟
+    # ==========================================
+    full_share_records = []
+    for provider, share in sorted_providers:
+        # 查一下这个 provider 具体服务了多少个绝对去重的域名
+        domain_count = provider_domain_count_strict.get(provider, 0)
+        full_share_records.append({
+            "Provider": provider,
+            "Domains_Count": domain_count,
+            "Market_Share(%)": round(share, 4) # 精确到小数点后4位，让你看清极小的长尾
+        })
+        
+    df_full_shares = pd.DataFrame(full_share_records)
+    # 你可以自己定义这个输出路径
+    output_full_shares_csv = "/home/wzq/project/autov/data/full_market_shares.csv"
+    df_full_shares.to_csv(output_full_shares_csv, index=False, encoding="utf-8")
 
     # 6. 打印简报
     hhi = sum(share**2 for share in market_shares.values())
