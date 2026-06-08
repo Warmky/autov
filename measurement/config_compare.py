@@ -30,27 +30,38 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
         xml_str = re.sub(r'</?\w+:', lambda m: '<' if m.group(0).startswith('</') else '<', xml_str)
         return xml_str
 
-    # 递归遍历 XML 树
+    # 递归遍历 XML 树 (带顺位与优先级追踪版)
     def traverse_tree(node, current_path, tags_counter, values_counter):
-        path = f"{current_path}/{node.tag}" if current_path else node.tag
-        
-        # 记录标签出现
-        tags_counter[path] += 1
-        
-        # 记录属性
+        # 记录本节点的属性
         for attr_name, attr_val in node.attrib.items():
-            attr_path = f"{path}[@{attr_name}]"
+            attr_path = f"{current_path}[@{attr_name}]" if current_path else f"[@{attr_name}]"
             tags_counter[attr_path] += 1
             if attr_val:
                 values_counter[attr_path][attr_val.lower()] += 1
         
-        # 记录值
+        # 记录本节点的值
         text_val = node.text.strip() if node.text else ""
         if text_val and len(node) == 0:
-            values_counter[path][text_val.lower()] += 1
+            values_counter[current_path][text_val.lower()] += 1
             
+        # 🌟 核心升级：追踪子节点的出现顺序 (用于分析优先级/降级机制)
+        child_tag_counts = Counter()
+        
         for child in node:
-            traverse_tree(child, path, tags_counter, values_counter)
+            child_tag = child.tag
+            child_tag_counts[child_tag] += 1
+            index = child_tag_counts[child_tag] # 它是第几个出现的同名兄弟？
+            
+            # 构建带顺位的路径，比如: incomingServer/authentication[1]
+            # 为了让只有1个的标签不显得太丑，我们可以：如果同名标签只有1个就不加，但因为是流式遍历无法预知总数，
+            # 所以统一加上 [1], [2]... 这种标准的 XPath 格式，反而更严谨！
+            child_path = f"{current_path}/{child_tag}[{index}]" if current_path else f"{child_tag}[{index}]"
+            
+            # 记录标签出现
+            tags_counter[child_path] += 1
+            
+            # 递归
+            traverse_tree(child, child_path, tags_counter, values_counter)
 
     # 2. 扫描数据
     processed_count = 0
@@ -67,7 +78,6 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
             
             # --- 处理 Autodiscover ---
             for entry in auto_disc_list:
-                # 兼容 Config / config
                 raw_xml = entry.get("Config") or entry.get("config") or ""
                 if not raw_xml or "Bad" in raw_xml or "Error" in raw_xml:
                     continue
@@ -77,9 +87,7 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
                 except:
                     continue
                 
-                # 完全参考你 Go 代码的寻址逻辑找 Host
                 host = ""
-                # Response -> Account -> Protocol -> Server
                 for server_node in root.findall(".//Protocol/Server"):
                     if server_node.text:
                         host = server_node.text.lower().strip()
@@ -90,6 +98,8 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
                     stats["autodiscover"][tier]["total_configs"] += 1
                     traverse_tree(root, "", stats["autodiscover"][tier]["tags"], stats["autodiscover"][tier]["values"])
                     processed_count += 1
+                
+                    break 
 
             # --- 处理 Autoconfig ---
             for entry in auto_conf_list:
@@ -102,9 +112,7 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
                 except:
                     continue
                 
-                # 完全参考你 Go 代码的寻址逻辑找 Host
                 host = ""
-                # emailProvider -> incomingServer / outgoingServer -> hostname
                 for host_node in root.findall(".//incomingServer/hostname") + root.findall(".//outgoingServer/hostname"):
                     if host_node.text:
                         host = host_node.text.lower().strip()
@@ -115,6 +123,8 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
                     stats["autoconfig"][tier]["total_configs"] += 1
                     traverse_tree(root, "", stats["autoconfig"][tier]["tags"], stats["autoconfig"][tier]["values"])
                     processed_count += 1
+                    
+                    break
 
     # 3. 整理报告
     print(f"📊 扫描完毕！成功解析了 {processed_count} 个有效 XML 配置。正在生成报告...")
@@ -155,6 +165,6 @@ if __name__ == "__main__":
     RAW_JSONL_FILE = "/home/wzq/project/autov/data/results_test.jsonl" 
     
     MAPPING_FILE = "/home/wzq/project/autov/data/host_tier_mapping.json"
-    OUTPUT_REPORT = "/home/wzq/project/autov/data/schema_discovery_report.json"
+    OUTPUT_REPORT = "/home/wzq/project/autov/data/schema_discovery_report_2.json"
     
     discover_schema_differences(RAW_JSONL_FILE, MAPPING_FILE, OUTPUT_REPORT)
