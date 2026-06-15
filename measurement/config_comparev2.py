@@ -68,24 +68,25 @@ def discover_schema_differences(raw_jsonl_file, mapping_file, output_report_json
             child_base_tag = child.tag
             child_type = child.attrib.get("type", "").lower()
             
-            # 🌟 核心升级 2：将 type 属性直接注入路径！
-            # 例如将 incomingServer 转换为 incomingServer[@type=imap]
-            if child_type:
-                child_tag = f"{child_base_tag}[@type={child_type}]"
-            else:
-                child_tag = child_base_tag
-                
-            child_tag_counts[child_tag] += 1
-            index = child_tag_counts[child_tag] 
+            # 🌟 核心修改：统一按照 base_tag（如 incomingServer）计算全局物理顺位！
+            child_tag_counts[child_base_tag] += 1
+            global_index = child_tag_counts[child_base_tag] 
             
-            child_path = f"{current_path}/{child_tag}[{index}]" if current_path else f"{child_tag}[{index}]"
+            # 🌟 组装路径：既保留物理顺位，又标注协议类型
+            if child_type:
+                # 生成的结果类似：incomingServer[1][@type=imap]
+                child_tag_str = f"{child_base_tag}[{global_index}][@type={child_type}]"
+            else:
+                # 生成的结果类似：domain[1]
+                child_tag_str = f"{child_base_tag}[{global_index}]"
+                
+            child_path = f"{current_path}/{child_tag_str}" if current_path else child_tag_str
             
             tier_data["tags"][child_path] += 1
             
-            # 将当前的协议 type 传递给下一层（作为 parent_type）
+            # 将当前的协议 type 传递给下一层（用于宏观统计 TCP/URL）
             next_parent_type = child_type if child_type else parent_type
             traverse_tree(child, child_path, tier_data, next_parent_type)
-
     # 2. 扫描数据
     processed_count = 0
     with open(raw_jsonl_file, "r", encoding="utf-8") as f:
