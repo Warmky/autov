@@ -4,7 +4,7 @@ import dns.resolver
 import re
 import pandas as pd
 import os
-
+# 配置漂移01
 # 复用你已有的实体映射器，还只有Autoconfig
 try:
     from analyze_host import EntityResolver
