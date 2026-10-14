@@ -53,7 +53,7 @@ def parse_realities():
                             result = module_data.get("result", {})
                             # 只要 result 里有 tls 字段，就说明加密协商成功
                             has_tls = "tls" in result
-                            crypto_status = "TLS" if has_tls else "PLAIN"
+                            crypto_status = "TLS" if has_tls else "PLAIN"  # 这里并不能说没有tls字段就是明文连接TODO
                             realities[host][port][proto] = {"status": "SUCCESS", "crypto": crypto_status}
                         else:
                             # 超时、拒绝连接等

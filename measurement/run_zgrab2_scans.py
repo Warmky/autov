@@ -1,5 +1,6 @@
 import os
 import subprocess
+# 实际连接  使用zgrab2指令进行批量扫描
 
 TARGETS_DIR = "/home/wzq/project/autov/data/zgrab2_targets"
 RESULTS_DIR = "/home/wzq/project/autov/data/zgrab2_results"
@@ -39,8 +40,11 @@ def get_zgrab2_command(proto, port, input_csv, output_jsonl):
         cmd.append("--pop3s")
     else:
         # 对 25, 587, 143, 110 及所有非标准端口，尝试 STARTTLS 升级探测
-        # 注意：SMTP 模块会自动处理 STARTTLS，不能加此参数；仅向 imap 和 pop3 显式下发
-        if module in ["imap", "pop3"]:
+        if module == "smtp":
+            # SMTP 需要使用两个override参数来确保 zgrab2 发送 EHLO 和 STARTTLS 命令
+            cmd.extend(["--send-ehlo-override", "--send-starttls-override"])
+        elif module in ["imap", "pop3"]:
+            # IMAP 和 POP3 协议简单，直接显式指定 starttls 即可
             cmd.append("--starttls")
         
     return cmd
